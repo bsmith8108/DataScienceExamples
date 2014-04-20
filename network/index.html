@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <title>Brandon Smith's Network</title>
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+  Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link href="main.css" type="text/css" rel="stylesheet" />
+
+  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="viz2.js"></script>
+</head>
+<body>
+    <h1>Facebook Friend Network</h1>
+    <div id="chart">
+
+  </div>
+    <div id="info">
+	<h2>Click a node to see who it is</h2>
+    </div>
+
+    <div id="analysis">
+	<h2>Analysis</h2>
+	<p>
+	The above is a representation of my facebook friend network,
+	as of April 16th, 2014. The size of the nodes are
+	representitive of their pagerank value, as calculated by 
+	the pagerank formula.
+	</p>
+	<p>
+	The network shows that I have 3 main clusterings of friends,
+	those from highschool, from college and from the summer camp I
+	attended/worked at. The biggest nodes in the graph are people
+	that have overlap between these groups, and because of this
+	my brother is the biggest node on the graph because he went to
+	my highschool and the same summer camp. A few other people have
+	this same property and are similarily just as big.
+	</p>
+    </div>
+    <div>d3.js force directed node focus:<strong>Facebook Friend Network</strong><span style="color:darslateblue;"> <small>click a node to focus, double click to visit page</small></span>
+    <aside><small>
+	<a href='http://ramblings.mcpher.com'>ramblings.mcpher.com</a><br>
+	works best on Chrome<br> ackowledgements:<a href='http://bost.ocks.org/mike/'>Mike Bostok for d3.js</a></small>
+    </aside>
+    </div>
+  </body>
+</html>

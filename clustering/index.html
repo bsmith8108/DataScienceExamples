@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="filter.css" />
+<link rel="stylesheet" href="graph.css" />
+<style>
+#writeup {
+margin:auto;
+width:70%;
+text-align:left;
+}
+</style>
+<body align="center">
+	<span id="heading">
+		<h1>Oklahoma Earthquakes</h1>
+		<span id="instructions">
+			Mouseover and click map for details. Click and drag histograms to crossfilter.
+		</span>
+	</span>
+	<div id="charts" align="center">
+            <table id="map_and_clustering"><tr>
+                <td>
+		<div id="map" class="display"></div>
+                </td>
+                <td>
+  		<div id="clustering" class="display"></div>
+                </td>
+           </tr>
+           <tr><td>
+               <div id="maplabel" class="display"></div>
+               </td>
+               <td>
+               <div id="clusteringlabel" class="display"></div>
+               </td>
+           </tr>
+           </table>
+
+		<div id="year-chart" class="chart display">
+			<div class="title">Year</div>
+		</div>
+
+		<div id="mass-chart" class="chart display">
+			<div class="title">Magnitude</div>
+		</div>
+	</div>
+	<div id="writeup">
+	<div class="title">Data Analysis</div>
+        <p>
+        The above visualization represents a clustering of the approximately 9,000 recordings of earthquakes between 1880 and 2013.
+	I used the k-centers clustering algorithm to generate the k initial centers and then implemented the k-means algorithm, to make
+	the clusters more reliable. I was able to label the clusters using my professors labeling algorithm. From the culmination
+	of these techniques, as well as the filtering available, I was able to find some interesting results.
+        </p>
+	<p>
+	Obviously there has been a spike in the number of earthquakes per year in the past 5 to 10 years, however, the interesting
+	part of this is where the earthquakes took place. For the first 130 years or so, the earthquakes appear to be fairly evenly
+	distributed throughout the state. There is a slight concentration in the bottom center of the state, but it is not unreasonably
+	dense. Now, when you move the filter to focus out all earthquakes, except those in the past 5 years, we see that these earthquakes
+	are primarily concentrated in the center of the state (slightly to the top center). Therefore, assuming that the first 130 years
+	of recording earthquakes represent a natural distribution of them across the state, we see that there has been a sharp, unnatural
+	flux in the top center of the state. Since there exists this flux, we are led to believe that this was not natural and thus
+	caused by an outside influence.
+	</p>
+	<p>
+	Not only can we see that there has been an increase in the past 5 years, our clustering confirms this. Also, our clustering also tells
+	us that the recent earthquakes have been of relatively shallow depth, something that could give us even more clues as to the
+	origin of the recent earthquake problems. So from this we can see that the location of the earthquakes has been changed both in
+	how their region of the state, but also in their epicenter depth.
+	</p>
+	<p>
+	Now that we have identified a clear digression from the natural pattern, not only in frequency but also in location, we must
+	examine its relation to the injection well sites, which can be overlayed on the map. What we can see from this is that even though
+	there is a large concentration of the sites in the middle of the state, where we observed the spike, there are other sites that
+	do not have earthquake epicenters in a close radius of the site. Also, we lack data on the date of the creation of the injection
+	well sites, so we cannot draw anything definite from our data.
+	</p>
+	<p>
+	In conclusion, using the data that we have, there does not appear to be a clear correlation between the location of the injection
+	well sites and the epicenters of multiple earthquakes. However, there is also a geographic part to the recent flux in earthquakes
+	which could be due to other factors in the northern part of the state. I would recommend that more research be done in this
+	northern area, since there does seem to be such a strong deviation from the natural tendencies of the past 130 years.
+	</p>
+	</div>
+	<div id="about"><div id="links">
+Data from the <a class= "blacklink" href="http://www.okgeosurvey1.gov/pages/home.php">Oklahoma Geological Survey</a>
+
+		</div>
+Much of the code taken from <a class= "blacklink" href="https://github.com/1wheel/meteors">github</a>
+		<div>
+        </div>
+</body>
+<script src="../d3/d3.v3.min.js"></script>
+<script src="point.js"></script>
+<script src="clustering.js"></script>
+<script src="kmeans.js"></script>
+<script src="lib/topojson.js"></script>
+<script src="lib/queue.js"></script>
+<script src="lib/crossfilter.js"></script>
+<script src="barChart.js"></script>
+<script src="drawMap.js"></script>
+<script src="lib/sample.js"></script>
+<script src="label_assignment.js"></script>
+<script src="forceDirectedGraph.js"></script>
+</html>

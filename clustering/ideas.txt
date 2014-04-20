@@ -1,0 +1,27 @@
+We should filter based on the Seebeck coefficient and the conductivity
+
+Look to add filtering based on the categorical data
+    -Family
+    -Final Form
+    -Temperature
+    -Preparitive Route
+
+Check the results of our data against a random set of data to see if there is any difference.
+    1. We establish the range of values for each column
+    2. Randomly select from that range and fill in that data
+    3. Run our analysis on that random data set and see if the results are similar to the one's
+       received by our data.
+
+Analysis:
+    -Look at linear regressions of different properties for data points within the same cluster
+    -Column C is the electrical resistivity
+	-electrical conductivity = 1/resistivity
+    -Column D is the Seebeck Coefficient
+    -Column I is the Power factor ( or (Column D)^2/(Column C))
+	-The ability of a material to produce useful electrical power is quantified by its power
+	 factor
+	-Materials with high power factor are able to generate more energy in a space-constrained
+	 application, but they are not necessarily efficient
+
+Visualization:
+    -Show the linear regression of Seebeck v. 

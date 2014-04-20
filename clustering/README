@@ -1,0 +1,19 @@
+Data in this directory taken from:
+http://www.okgeosurvey1.gov/pages/earthquakes/catalogs.php
+(link to the Oklahoma Corporation Commission data download from below)
+http://stateimpact.npr.org/oklahoma/tag/earthquakes/
+
+Information about the data can be found at these links:
+http://www.ogs.ou.edu/homepage.php
+http://www.okgeosurvey1.gov/pages/home.php
+http://stateimpact.npr.org/oklahoma/tag/earthquakes/
+
+Visualizations taken and modified from:
+https://github.com/1wheel/meteors
+See what that version looks like here:
+http://roadtolarissa.com/meteors/
+
+If you're interested in using a map for somewhere other than Oklahoma, you'll want this.
+You should also talk to me, since it's harder than it looks.
+http://bost.ocks.org/mike/map/
+https://github.com/mbostock/topojson/wiki

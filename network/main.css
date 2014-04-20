@@ -1,0 +1,26 @@
+text {
+  font: 10px sans-serif;
+}
+
+line {
+stroke: lightgrey;
+stroke-width: .5px;
+}
+
+line:hover {
+stroke:grey;
+}
+
+circle {
+stroke: grey;
+stroke-width: .5px;
+}
+
+#chart {
+height:500;
+}
+
+#analysis {
+margin:20px;
+padding:20px;
+}
