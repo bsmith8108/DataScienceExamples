@@ -13,7 +13,18 @@
   <script type="text/javascript" src="graph.js"></script>
   <script type="text/javascript" src="pagerank.js"></script>
    <!-- Run the main script -->
-  <script type="text/javascript" src="viz2.js"></script>
+  <script type="text/javascript">
+   google.load("jquery", "1");
+   google.setOnLoadCallback(function() {
+     initialize().then (
+      function (control) {
+      doTheTreeViz(control);
+      }
+    );
+  });
+  </script>
+
+  <script type="text/javascript" src="viz.js"></script>
   
 </head>
 <body>
