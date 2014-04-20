@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="utf-8" />
-  <title>Brandon Smith's Network</title>
+  <title>Thermo Electric Network</title>
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
   Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -13,7 +13,16 @@
   <script type="text/javascript" src="graph.js"></script>
   <script type="text/javascript" src="pagerank.js"></script>
    <!-- Run the main script -->
-  <script type="text/javascript" src="viz2.js"></script>
+  <script type="text/javascript">
+    google.load("jquery","1");
+    google.setOnLoadCallback( function() {
+	initialize().then(
+	    function(control) {
+		doTheTreeViz(control);
+	    }
+	);
+    });
+  <script type="text/javascript" src="viz.js"></script>
   
 </head>
 <body>
