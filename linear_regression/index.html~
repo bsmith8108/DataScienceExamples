@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Linear Regression Lab</title>
+        <script type="text/javascript" src="../d3/d3.v3.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+		var dataset = [5, 10, 15, 20, 25 ];
+		d3.select("body").selectAll("p")
+			.data(dataset)
+			.enter()
+			.append("p")
+			.text(function(d) { return d; });
+        </script>
+	<p>
+	This is where you'll put the interesting linear relationships you find 		between some of the variables in the included crime dataset.  You might 	need to put more files in this directory - that's fine.  Note that the d3 		files can be found in a separate project at the top level.  Also, don't 	forget to include some text so we know what we're looking at!</p>
+
+	<p>This should also be a new paragraph </p>
+    
+     </body>
+</html>

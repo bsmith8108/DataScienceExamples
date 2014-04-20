@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Linear Regression Lab</title>
+	<link href="main.css" type="css/text" rel="stylesheet" >
+        <script type="text/javascript" src="../d3/d3.v3.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+		var dataset;
+		var graph_marks = [];
+
+		for (var i=0;i<600; i+=20){
+			graph_marks.push(i);
+		}
+
+		d3.csv("data/visual_points.csv", function(data) {
+			dataset = data;
+			generateVis(dataset);
+			
+		});
+
+		d3.csv("data/line.csv", function(data) {
+			dataline = data;
+			generateFit(dataline);
+			addSubheader(dataline);
+			addRValue(dataline);
+		});
+		
+		function addRValue(dataline) {
+			var r = d3.select("#rValue")
+				.html("The r value is: " + dataline[0].r);
+		}
+
+		function addSubheader(dataline) {
+			var sub = d3.select("#subheader")
+				.html(dataline[0].col1 + " v. " + dataline[0].col2);
+		}
+
+		function generateFit(dataline) {
+			var fit = d3.select("svg").append("line")
+				.attr("x1", dataline[0].x1)
+				.attr("y1", dataline[0].y1)
+				.attr("x2", dataline[0].x2)
+				.attr("y2", dataline[0].y2)
+				.attr("stroke-width", 2)
+				.attr("stroke", "red");
+		}
+
+
+		function generateVis(dataset){
+			var w = 900;
+			var h = 600;
+
+			var svg = d3.select("body").append("svg")
+			    .attr("width", w)
+			    .attr("height", h);
+
+			var circles = svg.selectAll("circle")
+			   	.data(dataset)
+		   		.enter()
+		   		.append("circle");
+		
+			circles.attr("cx", function(d) {
+				return 100 * (parseFloat(d.column1)); })
+				.attr("cy", function(d) {
+				return 10 * parseFloat(d.column2); })
+				.attr("r", 2)
+				.on("click", function (d) {
+					d3.select("#dataPoint").html(d.column1+", " + d.column2);
+					d3.selectAll("circle").attr("fill","black"); 
+					d3.select(this).attr("fill", "red");
+					});
+
+		}
+        </script>
+     	<div id="graphHeader">Household Power Consumption</div>
+	<div id="subHeader"></div>
+	<div id="rValue"></div>
+	<div id="dataPoint">Click Point</div>
+	<div id="analysis">
+		<h3>Analysis</h3>
+<p>With this analysis, I was looking to see whether or not there was a correlation between between global active power and global intensity over the course of the 4 year period. After looking over my data there clearly does exist a correlation but I would need further domain expertise to qualify whether this is a cause and effect relationship or simply a correlation that is based on a third variable, that I am not aware of (but I did attempt to search for one and found none).
+</p>
+
+<p>
+During my analysis I did encounter  some missing data points within my csv. I chose to simply omit those points because of how large my data set was and the amount of missing data points was very small. Statistically, even if I were to be missing 1000 data points, that only accounts for 0.05% of the total data and therefore would not have a significant impact on my findings. </p>
+<p>
+We can gather from the graph that as the global active power increases the global intensity increases linearly in relation to it. We know that this is a fairly accurate relationship because the r^2 value for it is .998, meaning that there is almost a perfect correlation between the two variables.
+</p>
+<p> The data points that are plotted on the svg to the left are a randomly selected set of points out of the overall data set. The graph represents about 1% of the total data, or about 20,000 data points.</p>
+	</div>
+	</body>
+</html>
