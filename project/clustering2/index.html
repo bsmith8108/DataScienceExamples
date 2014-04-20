@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="filter.css" />
+<link rel="stylesheet" href="graph.css" />
+<style>
+#writeup {
+margin:auto;
+width:70%;
+text-align:left;
+}
+</style>
+
+<body align="center">
+	<span id="heading">
+		<h1>Thermo Electric Data</h1>
+		<span id="instructions">
+			Use the filters below to explore the data
+		</span>
+	</span>
+	<div id="charts" align="center">
+            <table id="map_and_clustering"><tr>
+                <td>
+		<div id="map" class="display"></div>
+                </td>
+                <td>
+  		<div id="clustering" class="display"></div>
+                </td>
+           </tr>
+           <tr><td>
+               <div id="maplabel" class="display"></div>
+               </td>
+               <td>
+               <div id="clusteringlabel" class="display"></div>
+               </td>
+           </tr>
+           </table>
+
+		<div id="year-chart" class="chart display">
+			<div class="title">Seebeck (uV/K)</div>
+		</div>
+
+		<div id="mass-chart" class="chart display">
+			<div class="title">Power Factor</div>
+		</div>
+	</div>
+	<div id="writeup">
+	<div class="title">Data Analysis</div>
+	<p>
+	To analyze the thermo electric data set, I used the kmeans algorithm to cluster it. To find the initial centers for the kmeans
+	algorithm, I used the k-centers algorithm, to make sure I have atleast a 2 approximation of the actual centers. To actually find
+	k I use the elbow method, where I find the largest jump in the variance between one clustering and another.
+	</p>
+        <p>
+        Clearly there are some distinct clusterings within this data and some patterns arise when we filter these clusterings based
+	on different attributes. Unfortuanately, the actual clustering that you see each time the page is loaded, varies fairly
+	widely based on the point that is selected randomly to be the first initial center. However, an acceptable clustering arises
+	within 1 or 2 refreshes of the page. I have selected to filter based on the Seebeck coefficient and the kappa ZT.
+        </p>
+	<p>
+	When you begin to filter with the Seebeck, you will notice that the amount of data points within a 200 uV/K range spikes every
+	100 uV/K. This seems to indicate that the Seebeck numbers are broken into relatively discrete sections. As for the relationship	
+	between the Seebeck number and the power factor, there appears to be an even distribution of values for the power factor, over
+	a constant range of Seebeck numbers.
+	</p>
+	<p>
+	Next when we look at the labels for the different clusters that are generated, we can see that temperature plays a large factor
+	in the clustering of the data. Therefore, moving forward I would want to look at the relationship between the temperature and all
+	of the different columns of data that we have. Especially since we only have data from a few different temperatures.
+	</p>
+	<p>
+	Besides the above, for future analysis, I would like to include the ability to filter based on categorical data, such as the family,
+	final form, temperature and preparitive route. This will allow us to search for the optimal arrangement of categorical properties
+	and narrow the search field considerably for a better thermo electric
+	</p>
+	</div>
+	<div id="about"><div id="links">
+Data from the <a class= "blacklink" href="http://www.okgeosurvey1.gov/pages/home.php">University of California, Santa Barbra</a>
+
+		</div>
+Much of the code taken from <a class= "blacklink" href="https://github.com/1wheel/meteors">github</a>
+		<div>
+        </div>
+</body>
+<script src="point.js"></script>
+<script src="clustering.js"></script>
+<script src="kmeans.js"></script>
+<script src="../../d3/d3.v3.min.js"></script>
+<script src="barChart.js"></script>
+<script src="lib/queue.js"></script>
+<script src="lib/crossfilter.js"></script>
+<script src="forceDirectedGraph.js"></script>
+<script src="drawMap.js"></script>
+<script src="label_assignment.js"></script>
+</body>
+</html>

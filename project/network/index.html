@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <title>Brandon Smith's Network</title>
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+  Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link href="main.css" type="text/css" rel="stylesheet" />
+
+  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="graph.js"></script>
+  <script type="text/javascript" src="pagerank.js"></script>
+   <!-- Run the main script -->
+  <script type="text/javascript" src="viz2.js"></script>
+  
+</head>
+<body>
+    <h1>Thermoelectric Network</h1>
+    <i>Click, drag or zoom to explore map</i>
+    <div id="chart">
+
+    </div>
+    <div id="info">
+
+    </div>
+    <div id="analysis">
+	<h2>Analysis</h2>
+	<p> To make the network displayed above, I first found the 5
+	nearest neighbors to each point (or compound) using a kdtree. 
+	I then linked each point to its nearest neighbors, regardless
+	of whether or not it was a mutual relationship. Once I had this
+	graph like structure, I was able to perform the pagerank 
+	algorithm to the graph, to determine the importance of each of
+	the points. The relative importance of each of the points is
+	marked by the size of the point, the bigger the point is
+	represented on the network above.</p>
+	<p> You can more closely examine the network represented above
+	by single clicking on a point to see its attributes and then
+	double clicking on it to isolate that point and its connections.       Once you isolate a point, you can then "focus" or double click
+	on another node to see all of its connections, as well as the
+	already focused node, and so on as you desire.</p>
+    </div>
+    <div>d3.js force directed node focus:
+	<strong>Thermo Electric Network</strong>
+	<span style="color:darslateblue;"> 
+	    <small>
+		double click a node to focus, click to show information
+	    </small>
+	</span>
+	<aside>
+	    <small>
+	    <a href='http://ramblings.mcpher.com'>ramblings.mcpher.com</a><br>
+	works best on Chrome<br> ackowledgements:
+	    <a href='http://bost.ocks.org/mike/'>Mike Bostok for d3.js</a>
+	</small>
+    </aside>
+    </div>
+  </body>
+</html>

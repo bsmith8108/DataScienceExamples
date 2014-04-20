@@ -1,0 +1,28 @@
+{
+    "nodes" :[
+	{"name":"John", "id":"1", "count":20, "label":"test"},
+	{"name":"Garrett", "id":"2", "count":20, "label":"test"},
+	{"name":"Jimmy", "id":"2", "count":20, "label":"test"},
+	{"name":"Robby", "id":"3", "count":20, "label":"test"},
+	{"name":"Pomp", "id":"4", "count":20, "label":"test"},
+	{"name":"Slyke", "id":"5", "count":20, "label":"test"},
+	{"name":"Collins", "id":"6", "count":20, "label":"test"},
+	{"name":"Andrew", "id":"7", "count":20, "label":"test"},
+	{"name":"Blake", "id":"8", "count":20, "label":"test"},
+	{"name":"Kevin", "id":"9", "count":20, "label":"test"},
+	{"name":"Keenan", "id":"10", "count":20, "label":"test"},
+	{"name":"Chris", "id":"11", "count":20, "label":"test"},
+	{"name":"Brandon", "id":"12", "count":20, "label":"test"}
+    ],
+    "links":[
+	{"source":1, "target":0, "depth":1, "linkName":"John"},
+	{"source":1, "target":2, "depth":1, "linkName":"John"},
+	{"source":1, "target":3, "depth":1, "linkName":"John"},
+	{"source":5, "target":4, "depth":1, "linkName":"John"},
+	{"source":1, "target":5, "depth":1, "linkName":"John"},
+	{"source":1, "target":6, "depth":1, "linkName":"John"},
+	{"source":1, "target":7, "depth":1, "linkName":"John"}
+    ]
+}
+
+

@@ -1,0 +1,232 @@
+<DOCTYPE html>
+<!-- Much of the code below is from: http://bl.ocks.org/mbostock/7607535 -->
+<script src="../../d3/d3.v3.js" rel="javascript" type="text/javascript"></script>
+<script src="../prediction/kdtree.js" rel="javascript" type="text/javascript"></script>
+<script src="clustering.js" rel="javascript" type="text/javascript"></script>
+<!-- <script src="createVisualString.js" rel="javascript" type="text/javascript"></script> -->
+<meta charset="utf-8">
+<style>
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--root {
+  stroke: #777;
+  stroke-width: 2px;
+}
+
+.node--leaf {
+  fill: white;
+  overflow:scroll;
+}
+
+.label {
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  overflow:scroll;
+}
+
+.label,
+.node--root,
+.node--leaf {
+}
+</style>
+<!--  If you'd like the leaf nodes not to be clickable for an extra level of doom / details,
+      put this back in the style for the leaf nodes above:
+      pointer-events: none; -->
+<body>
+<h2 align=center>Lab 2 - Hierarchical Clustering</h2>
+<p>Below I have created a hierarchichal clustering of the thermo electric data set.
+To clean the data, I took the average of each 
+of the columns and replaced the missing values with the average from that column. This allowed me to
+begin to cluster the data, based on its nearest neighbor. The clustering algorithm I used was one where
+I took the first cluster in the list of
+clusters and found its nearest neighbor, and then used it's nearest neighbor as the representative point
+for that cluster. I continued to perform this construction until there was only one cluster left. The 
+practice of using a points nearest neighbor as its representative point allowed me to avoid a linear
+structure for the hierarchichal clustering tree.
+</p>
+<p>
+Unfortunately, I did not have time to get a proper labeling of each of the clusters and therefore it is very
+ dificult to discern any trends from the data. However, it is very clear from the visualization that there 
+do exist clusterings that could be very useful in the analysis of this data. When I do get labels working (and and a better way to actually view the data within each of the nodes) I will look for clusters that contain the
+highest thermoelectric properties, and see what other properties discern those elements from the other clusters
+Also, this clustering representation could be used to eliminate certain regions of the data, that do not appear to work well as thermo electrics. This could help researchers focus their search, and hopefully come to a quicker
+discovery</p>
+<p>
+I believe this data is well purposed for being used with clustering, since we are looking for a type of material that performs the highest and that type of material(s) should all have similar properties.</p>
+<p> I plan on eventually getting labeling working for this lab, however, I ran out of time before it was due.</p>
+ 
+<script>
+var margin = 10,
+    outerDiameter = 800,
+    innerDiameter = outerDiameter - margin - margin;
+
+var x = d3.scale.linear()
+    .range([0, innerDiameter]);
+
+var y = d3.scale.linear()
+    .range([0, innerDiameter]);
+
+var color = d3.scale.linear()
+    .domain([-1, 5])
+    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .interpolate(d3.interpolateHcl);
+
+var pack = d3.layout.pack()
+    .padding(2)
+    .size([innerDiameter, innerDiameter])
+    .value(function(d) { return x(1) });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", outerDiameter)
+    .attr("height", outerDiameter)
+  .append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")");
+
+/* TODO: You'll want to replace the below hierarchy with one that you've
+ * automatically generated from the actual data you're looking at.  To
+ * do that, you'll likely want to create a separate Javascript file or 
+ * at least a separate function that reads in the data and creates the
+ * hierarchy.  The "name" field will be displayed, so you should think
+ * carefully about what the appropriate label is for each node.  The
+ * details field will be displayed when a specific node is zoomed in on,
+ * so think about what details should be displayed with each point when
+ * requested.  If your details or name field is long and you'd like it to 
+ * wrap the text when displayed, you'll need to manually insert '\n' line
+ * breaks into your name/details field (which will then be respected by
+ * some functions I've written below - it's sort of a pain to do this with an
+ * svg).
+ */ 
+var haverHierarchy = [];
+
+var insertLineBreaks = function (d) {
+    var el = d3.select(this);
+    var linesToSplit = d.name;
+    var lines = linesToSplit.split('\n');
+    el.text('');
+
+    for (var i = 0; i < lines.length; i++) {
+        var tspan = el.append('tspan').text(lines[i]);
+        if (i > 0)
+            tspan.attr('x', 0).attr('dy', '20');
+    }
+};
+
+/* If you want to, you can write out to a .json file from python and read in the hierarchy
+ * that way instead of generating it directly from within Javascript.  If you do that, your
+ code here will look something like this instead of directly calling drawHierarchy. */
+   d3.json("viz.json", function(error, json) {
+       if (error) { console.log(error) }
+       else {
+	data = json;
+       drawHierarchy(data);}
+   });
+
+ 
+// drawHierarchy(rep_String);
+//` drawHierarchy(haverHierarchy);
+
+/* This function takes a hierarchy and draws it as nested circles.  The hierarchy should be a 
+ * dictionary where the top level is a single node (the root) and each node is represented
+ * by a "name" key and a "children" key.  The value for the children key should be a list of
+ * dictionaries (i.e., nodes in this same form).  Leaf nodes don't have the children key.
+ * For an example dictionary, see the haverHierarchy above.
+ */
+
+function drawHierarchy(hierarchy) {
+  var focus = hierarchy,
+      nodes = pack.nodes(hierarchy);
+
+  svg.append("g").selectAll("circle")
+      .data(nodes)
+    .enter().append("circle")
+      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+      .on("click", function(d) { 
+          return zoom(d); 
+      });
+
+  svg.append("g").selectAll("text")
+      .data(nodes)
+    .enter().append("text")
+      .attr("class", "label")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .style("fill-opacity", function(d) { return d.parent === hierarchy ? 1 : 0; })
+      .style("display", function(d) { return d.parent === hierarchy ? null : "none"; })
+      .text(function(d) { return d.name; });
+
+  d3.selectAll("text").each(insertLineBreaks);
+  d3.select(window)
+      .on("click", function() { 
+          zoom(hierarchy); 
+  });
+
+  function zoom(d, i) {
+
+    var focus0 = focus;
+    focus = d;
+
+    // This duplicates a function below, solely because it needs the focus values.
+    // This is poor coding practice and you shouldn't copy it. 
+    var insertLineBreaksWithFocus = function (d) {
+        var el = d3.select(this);
+        var linesToSplit = d.name;
+        var focusOnLeaf = !d.children && d == focus;
+        if (focusOnLeaf && d.details) { 
+            linesToSplit = d.details;
+        }
+ 
+        var lines = linesToSplit.split('\n');
+        el.text('');
+ 
+        for (var i = 0; i < lines.length; i++) {
+            var tspan = el.append('tspan').text(lines[i]);
+            if (i > 0)
+                tspan.attr('x', 0).attr('dy', '20');
+        }
+    };
+
+    var k = innerDiameter / d.r / 2;
+    x.domain([d.x - d.r, d.x + d.r]);
+    y.domain([d.y - d.r, d.y + d.r]);
+    d3.event.stopPropagation();
+
+    var transition = d3.selectAll("text,circle").transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .attr("transform", function(d) { return "translate(" + x(d.x) + "," + y(d.y) + ")"; });
+
+    transition.filter("circle")
+        .attr("r", function(d) { return k * d.r; });
+
+    transition.filter("text")
+      .filter(function(d) { 
+           var focusOnLeaf = !d.children && d == focus;
+           return d.parent === focus || d.parent === focus0 || focusOnLeaf; })
+        .style("fill-opacity", function(d) { 
+             var focusOnLeaf = !d.children && d == focus;
+             return (d.parent === focus || focusOnLeaf) ? 1 : 0; })
+        .each(insertLineBreaksWithFocus)
+        .each("start", function(d) { 
+             var focusOnLeaf = !d.children && d == focus;
+             if (d.parent === focus || focusOnLeaf) this.style.display = "inline"; })
+        .each("end", function(d) { 
+             var focusOnLeaf = !d.children && d == focus;
+             if (d.parent !== focus && !focusOnLeaf) this.style.display = "none"; });
+  }
+}
+
+d3.select(self.frameElement).style("height", outerDiameter + "px");
+
+</script>
+</body>
+</html>

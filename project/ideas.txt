@@ -1,0 +1,15 @@
+Big Picture visualizations:
+    Make clustering based on:
+	-Seebeck
+	-Resistivity
+    Node size is the Power factor
+    Color is the family
+    Maybe make a clustering for each of the different temperatures
+
+    
+    
+    
+    Heat Map:
+	Temperatures are the rings on the inside
+	The labels on the outside are the family's
+	Can change what it is showing on different properties

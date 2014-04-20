@@ -1,0 +1,224 @@
+<html>
+    <!DOCTYPE html>
+    <head>
+        <!-- See the TODOs below for your tasks on this part of the lab.  Before starting
+             on the TODOs, you should load this page as it may give you some idea of what
+             you're aiming for.  Also, you should be sure to try this out with some dummy
+             csv files before trying it on the full data.
+
+             I've written a lot of display code for you, but the page is not at all pretty.
+             You may choose to make it look nicer or not.  (If you do a really nice job, I
+             may steal your css for a future class... with credit of course.)
+        -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Lab 2 - Prediction of missing values</title>
+        <script type="text/javascript" src="../d3/d3.v3.min.js"></script>
+        <script>
+            /* Global Variables */
+            // The stub for the beginning of every header variable (to be appended with the number).
+            var HEADERS_VAR = "header";   
+            // The number of category headers.  To be filled once the data has loaded.
+            var numCategoryHeaders;
+            // An array of arrays to be filled once the category data has loaded.
+            var arrayCategoryData = [];
+            // The number of numerical headers.  To be filled once the data has loaded.
+            var numNumericalHeaders;
+            // An array of arrays to be filled once the numerical data has loaded.
+            var arrayNumericalData = [];
+
+            /* Called once the data has loaded and the user has put in the partial data point
+             * they're interested in.  Calls out to find the nearest neighbor.
+             */
+            function processDataAndPerformQuery(){ 
+                var pointArray = [];
+                for (var i = 0; i < numCategoryHeaders; i++) {
+                    var headersVar = HEADERS_VAR + i;
+		    var chosenOption = document.getElementById(headersVar).value;
+                    if (chosenOption !== "missing") {
+                        var chosenIndex = parseInt(chosenOption);
+                        var chosen = arrayCategoryData[i][chosenIndex];
+                        pointArray.push(chosen);
+                    } else {
+                        pointArray.push("");
+                    }
+                }
+                for (var i = 0; i < numNumericalHeaders; i++) {
+                    var headersVar = "num" + HEADERS_VAR + i;
+		    var value = document.getElementById(headersVar).value;
+                    if (value) {
+                        pointArray.push(value);
+                    } else {
+                        pointArray.push("");
+                    }
+                }
+
+		var nn = findNearestNeighbor(pointArray);
+                var prediction = useNearestNeighborToMakePrediction(pointArray, nn);
+                displayPrediction(prediction)
+            }
+
+            function displayPrediction(prediction) {
+                console.log(prediction);
+                d3.select("#headerrow").append("th").text("Prediction");
+                for (var i = 0; i < numCategoryHeaders; i++) {
+                    var trId = "row" + HEADERS_VAR + i;
+                    var row = d3.select("#" + trId);
+                    var cell = row.append("td").text(prediction[i]);
+                }
+                for (var i = 0; i < numNumericalHeaders; i++) {
+                    var trId = "row" + "num" + HEADERS_VAR + i;
+                    var row = d3.select("#" + trId);
+                    var cell = row.append("td").text(prediction[numCategoryHeaders + i]);
+                } 
+            }
+
+            function getHeadersConvertData(inputData, arrayData, includeEmpty) {
+                var headers = d3.keys(inputData[0]);
+                console.log(headers);
+            
+	        // Convert the data to an array of arrays.
+                for (var i = 0; i < headers.length; i++) {
+                    arrayData.push([]);
+                }
+                for (var key in inputData) {
+                    var row = inputData[key];
+                    for (var i = 0; i < headers.length; i++) {
+                        var possibleCategory = row[headers[i]];
+                        if (possibleCategory || includeEmpty) {
+                            arrayData[i].push(row[headers[i]]);
+                        }
+                    }
+                }
+                console.log(arrayData);
+                return headers;
+            }
+
+            /* Get a csv of the possible categories and add them as selectors
+             * in the form.  This csv file is assumed to have a row of headers
+             * at the top (human-readable category names) with all possible 
+             * categorical values in the columns below (also human-readable).
+             */
+            function addCategoriesToForm(filename, table) {
+	        d3.csv(filename, function(error, data) {
+	            // Callback after data has maybe loaded.
+	            if (error) {  //If error is not null, something went wrong.
+	                console.log(error);  //Log the error.
+	            } else {   //If no error, the file loaded correctly. Yay!
+                        // Assumes at least one item.
+                        headers = getHeadersConvertData(data, arrayCategoryData, false);
+                        // Store the number of headers for use later.
+                        numCategoryHeaders = headers.length;
+                        // Add all the category selectors to the page.
+                        for (var i = 0; i < headers.length; i++) { 
+                            var headerVarName = HEADERS_VAR + i;
+                            var column = arrayCategoryData[i];
+                            var row = table.append("tr").attr("id", "row" + headerVarName);
+                            var cell = row.append("td");
+                            var label = cell.append("label")
+                                            .attr("for", headerVarName)
+                                            .text(headers[i] + ": ");
+                            var select = cell.append("select")
+                                             .attr("id", headerVarName);
+                            var unknownOption = select.append("option")
+                                                      .attr("value", "missing")
+                                                      .text("Unknown / Missing Value");
+                            for (var j = 0; j < column.length; j++) {
+                                var optionVarName = "option" + j;
+                                var option = select.append("option")
+                                                   .attr("value", j)
+                                                   .text(column[j]);
+                            }
+                        }
+                    }
+                });
+            }
+
+            /* Get a csv of the possible numerical fields and add them as inputs
+             * in the form.  This csv file is assumed to have a row of headers
+             * at the top (human-readable category names) followed by a row containing
+             * the units to display.
+             */
+            function addNumbersToForm(filename, table) {
+	        d3.csv(filename, function(error, data) {
+	            // Callback after data has maybe loaded.
+	            if (error) {  //If error is not null, something went wrong.
+	                console.log(error);  //Log the error.
+	            } else {   //If no error, the file loaded correctly. Yay!
+                        // Assumes at least one item.
+                        headers = getHeadersConvertData(data, arrayNumericalData, true);
+                        numNumericalHeaders = headers.length;
+                        // Add all the numerical fields to the page.
+                        for (var i = 0; i < headers.length; i++) { 
+                            var headerVarName = "num" + HEADERS_VAR + i;
+                            var column = arrayNumericalData[i];
+                            var row = table.append("tr").attr("id", "row" + headerVarName);
+                            var cell = row.append("td");
+                            var label = cell.append("label")
+                                            .attr("for", headerVarName)
+                                            .text(headers[i] + " (in " + column[0] + "): ");
+                            var input = cell.append("input")
+                                            .attr("id", headerVarName)
+                                            .attr("name", headerVarName)
+                                            .attr("type", "number");
+                        }
+                    }
+                });
+            }
+
+            /* This function is given an array of the query point the user is
+             * interested in finding the nearest neighbor for and should return
+             * the found nearest neighbor point.  Both points are expected to
+             * be in a single array where all categorical values are first in the
+             * array and all numerical values come after.  Categorical values are
+             * expressed as strings.
+             */
+            function findNearestNeighbor(queryPointArr) {
+                // TODO: This is where you do your work!  I'd recommend creating
+                // a separate javascript file where you create a kd-tree and
+                // calling out to that from here.  Right now, this returns the same
+                // point it's given.  Obviously, you should change this to return
+                // the actual nearest neighbor in the same format.
+                return queryPointArr;
+            }
+
+            function useNearestNeighborToMakePrediction(queryPoint, nearestPoint) {
+                // TODO: Fill in this function so that it returns a version of the
+                // query point with all previously missing values filled in.  Right
+                // now this just returns the queryPoint unchanged, but you should fix
+                // that.
+                return queryPoint;
+            }
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Lab 2 - Predicting missing values</h2>
+        Enter your data query below by choosing the category values and entering the numerical values that you know.  We will then use the nearest neighbor in the full dataset to predict the 
+        unknown values.
+
+        <script type="text/javascript">
+	    // Add the table and form to the page.
+            var form = d3.select("body").append("form").attr("id", "getdata");
+            var table = form.append("table").attr("cellpadding", "5px").attr("border", 0);
+            var headerrow = table.append("tr").attr("id", "headerrow");
+            headerrow.append("th").text("Query Point");
+
+            // Add a submit button to the form.
+            form.append("input")
+                .attr("class", "button")
+                .attr("name", "submit")
+                .attr("type", "button")
+                .attr("value", "Predict the missing values")
+                .attr("onclick", "processDataAndPerformQuery()");
+
+            // TODO: Create a csv of the categories and put it at categories.csv
+            // or change the name below.  The first row should be the header names
+            // for the categories.  The columns should have all possible category values.
+            // If some categories have more values than others, put the empty categories
+            // at the end of the column as empty strings.
+            addCategoriesToForm("categories.csv", table);
+
+            addNumbersToForm("numbers.csv", table);
+        </script>
+
+    </body>
+</html>

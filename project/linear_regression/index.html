@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Linear Regression Lab</title>
+	<link href="main.css" type="css/text" rel="stylesheet" >
+        <script type="text/javascript" src="../../d3/d3.v3.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+		var dataset;
+		var graph_marks = [];
+		
+		var w = 900
+		var h = 600
+		function plotMid(){
+			d3.select("svg").append("line")
+				.attr("x1", 0)
+				.attr("x2", 900)
+				.attr("y1", 300)
+				.attr("y2", 300)
+				.attr("stroke-width", 3)
+				.attr("stroke", "black");
+		}
+
+		d3.csv("data/test.csv", function(data) {
+			dataset = data;
+			generateVis(dataset);
+			plotMid();
+			
+		});
+
+		d3.csv("data/line.csv", function(data) {
+			dataline = data;
+			generateFit(dataline);
+			addSubheader(dataline);
+			addRValue(dataline);
+		});
+		
+		function addRValue(dataline) {
+			var r = d3.select("#rValue")
+				.html("The r value is: " + dataline[0].r);
+		}
+
+		function addSubheader(dataline) {
+			var sub = d3.select("#subheader")
+				.html(dataline[0].col1 + " v. " + dataline[0].col2);
+		}
+
+		function generateFit(dataline) {
+			var fit = d3.select("svg").append("line")
+				.attr("x1", dataline[0].x1)
+				.attr("y1", dataline[0].y1)
+				.attr("x2", dataline[0].x2)
+				.attr("y2", dataline[0].y2)
+				.attr("stroke-width", 2)
+				.attr("stroke", "red");
+		}
+
+
+		function generateVis(dataset){
+			var w = 900;
+			var h = 600;
+
+			var svg = d3.select("body").append("svg")
+			    .attr("width", w)
+			    .attr("height", h);
+
+			var circles = svg.selectAll("circle")
+			   	.data(dataset)
+		   		.enter()
+		   		.append("circle");
+		
+			circles.attr("cx", function(d) {
+				return 20000 * (parseFloat(d.column1)); })
+				.attr("cy", function(d) {
+				return parseFloat(d.column2) + 300; })
+				.attr("r", 2)
+				.on("click", function (d) {
+					d3.select("#dataPoint").html(d.column1+", " + d.column2);
+					d3.selectAll("circle").attr("fill","black"); 
+					d3.select(this).attr("fill", "red");
+					});
+
+		} 
+        </script>
+     	<div id="graphHeader">Thermoelectric Material Analysis</div>
+	<div id="subHeader"></div>
+	<div id="rValue"></div>
+	<div id="dataPoint">Click Point</div>
+	<div id="analysis">
+		<h3>Analysis</h3>
+	<p> When I began to look at this data, I wanted to search for any correlation that may occur within different families of compounds, so as to eventually generalize the rule for any new material to be tested. To start this I began by looking at the the chemical family that was most abundant of my data points. From the results of testing this single family of compounds, there does appear to be a correlation, which can hopefully be extended to the whole data set.
+			<p> The graph to the left represents the resistance in Ohm cm. when compared to the Seebeck(uV/k) value and the black line in the middle represents 0 uV/k, since the Seebeck values could also be negative. As described above, the values that are graphed are only taken from the CaMnO3 family of chemicals. Unfortunately, there are some outliers that do not show up on this graph
+because they are so much higher than the mean average (without the outliers, as defined by a difference greater than 50 sigma) for the resistance readings, which was 0.032 Ohm cm.
+When these outliers are removed from the calculations, we get an r squared value of -0.54, which is not a great correlation, but one that cannot be ignored. </p>
+<p>Fortunately, I did not have to deal with any empty data cells when only analyzing this small set of data. I only excluded data based on its distance from the mean average, as described above. Therefore, my best fit line does not take into account the outliers, but fits the visible data points very well.</p>
+<p>
+From the best fit line, we can see that, in general, as the Seebeck value decreases, the resistivity of the material within the CaMnO3 family increases in an almost linear fashion. This effect would be interesting to explore within the other families of coumpounds, when I am not under time constraint. I chose to focus on the family of compounds that has the largest selection of data points.</p>
+<p> I cannot say whether or not the outliers in this data set are significant or not because I do not have the domain expertise. However, I do want to acknowledge that there is a clear trend when you do not take them into account. I did not ignore these outliers though in my consideration of the data, it is only at the very end that I took them out of the calculation, so as to better see the correlation between the other data points. An investigation into why these points lie so far outside of the normal range would be an interesting topic to pursue later on.
+</p>
+	</div>
+	</body>
+</html>

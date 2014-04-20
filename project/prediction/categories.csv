@@ -1,0 +1,282 @@
+x,Formula,series,family,preparative route,final form,Authors,DOI,Comments,Comments,Author of Unit Cell,Unit Cell DOI,ICSD of structure
+,,,,,,,,,,,,
+0,CaMnO3,Ca1-xLaxMnO3,CaMnO3,Solid state reaction,polycrystalline,Lan2009JMST,http://www.jmst.org/EN/Y2009/V25/I04/0535,Data at 460 K,Data at 460 K,Poeppelmeier,http://dx.doi.org/10.1016/0022-4596(82)90292-4,35218
+0.02,Ca0.98La0.02MnO3,LixNi1-xO,NiO,Ultrasonic Spray Pyrolysis,single crystal,Shin1999JJAPP2,http://dx.doi.org/10.1143/JJAP.38.L1336,Extrapolated from 325 K,Extrapolated from 325 K,Taguchi,http://dx.doi.org/10.1006/jssc.1996.0250,82210
+0.04,Ca0.96La0.04MnO3,Ca1-xBixMn1-yNbyO3,A2Ru2O7,Co-precipitation,nanoparticles,Park2009JAC,http://dx.doi.org/10.1016/j.jallcom.2009.08.012,Extrapolated from 972 K,Extrapolated from 972 K,Sasaki,http://dx.doi.org/10.2183/pjab.55.43,82209
+0.06,Ca0.94La0.06MnO3,CaMn1-xNbxO3,BaPbO3,solid state reaction,polcrystalline,Populoh2011JMR,http://dx.doi.org/10.1557/jmr.2011.140,Seebeck extrapolated from 500 K,Seebeck extrapolated from 500 K,Bocher,http://dx.doi.org/10.1016/j.actamat.2009.07.062,82208
+0.08,Ca0.92La0.08MnO3,CaMn1-xRuxO3,LaNiO3,Ultrasonic spray pyrolysis,polyrystalline,Zhou2003MRB,http://dx.doi.org/10.1016/S0025-5408(02)00997-2,Extrapolated from 323 K,Extrapolated from 323 K,Zhou,http://dx.doi.org/10.1021/cm9007238,82207
+0.0024,NiO,Ca1-xGdxMnO3,Bi/Sb/Pb-Te/Se,Solid state reaction (under oxygen),single,Lan2010JACS,http://dx.doi.org/10.1111/j.1551-2916.2010.03673.x,Extrapolated from 926 K,Extrapolated from 926 K,Yamamoto,http://dx.doi.org/10.1006/jssc.1994.1116,9866
+0.0066,Li0.0024Ni0.9976O,Nd2-xBixRu2O7,CoSb3,"Evaporate nitrates (1173 K, air)",,Zhou2001ML,http://dx.doi.org/10.1016/S0167-577X(01)00317-2,Extrapolated from 478 K,Extrapolated from 478 K,Kanno,http://dx.doi.org/10.1006/jssc.1993.1012,166044
+0.0184,Li0.0066Ni0.9944O,Yb2-xBixRu2O7,Si,melted,,Yasukawa2003SSC,http://dx.doi.org/10.1016/S0038-1098(03)00080-2,58.4% density,58.4% density,Wang,http://dx.doi.org/10.1021/jp809049s,165698
+0.0242,Li0.0184Ni0.9816O,Y2-xBixRu2O7,TiNiSn,Vacuum hot pressed,,Gaultois2013JPCM,http://dx.doi.org/10.1063/1.2362922,"58.4% density, extrapolated 860 K","58.4% density, extrapolated 860 K",Kobayashi,http://dx.doi.org/10.1016/0022-4596(91)90248-G,78129
+0.1,Li0.0242Ni0.9758O,Nd2Ru2O7,ACoO2,Magnetic levitation induction furnace,,Flahaut2006JAP,http://dx.doi.org/10.1016/0022-4596(91)90248-G,38.8% density,38.8% density,Sousa,http://dx.doi.org/10.1016/j.matchemphys.2007.11.032,78127
+0.18,Ca0.98Bi0.02Mn0.98Nb0.02O3,Ca1-xNdxMnO3,ZnO,Solid state reaction + extra,,Kobayashi1991JSSC,http://dx.doi.org/10.1023/A:1018515223271,"38.8% density, extrapolated 560 K","38.8% density, extrapolated 560 K",Dlouha,http://dx.doi.org/10.1007/s003390101141,73787
+0.6,Ca0.96Bi0.04Mn0.96Nb0.04O3,Ca1-xTbxMnO3,WO3,Flux (Bi self-flux),,Yasukawa1997JMSL,http://dx.doi.org/10.1557/PROC-793-S3.3,Extrapolated from 320 K,Extrapolated from 320 K,Moussa,http://dx.doi.org/10.1016/S0038-1098(01)00265-4,73790
+1,Ca0.9Bi0.1Mn0.9Nb0.1O3,Ca1-xHoxMnO3,La2CuO4,Spark Plasma Sintering,,Funahashi2003MP,http://dx.doi.org/10.1109/ICT.2007.4569450,Extrapolated from 870 K,Extrapolated from 870 K,Ksepko,http://dx.doi.org/10.1080/01411590410001667635,73793
+2,CaMn0.98Nb0.02O3,Ca1-xYbxMnO3,LaCuO4,Solid state reaction (O2 atmosphere),,Sanmathi2007ICT,http://dx.doi.org/10.1201/9781420049718.ch19,Data at 600 K,Data at 600 K,Falcon,http://dx.doi.org/10.1006/jssc.1997.7477,73799
+1.5,CaMn0.98Ru0.02O3,CaMnO3,LiMn2O4,Solid state reaction (oxalates),,Scherrer1995,http://dx.doi.org/10.1201/9781420049718.ch22,Data at 620 K,Data at 620 K,Yang,http://dx.doi.org/10.1016/0025-5408(93)90055-I,78133
+0.3,CaMn0.96Ru0.04O3,Ca1-xYxMnO3,CuCrO2,"flux (Sn), Ar",,Skrabek1995,http://dx.doi.org/10.1021/cm052055b,Extrapolated from 850 K,Extrapolated from 850 K,Feutelais,Http://dx.doi.org/10.1107/S0567740874004729 ,164747
+0.2,CaMn0.94Ru0.06O3,Ba1-xSrxPbO3,In2O3,"melted, inert",,He2006CM,http://dx.doi.org/10.1557/jmr.2011.163,Kappa extrapolated from 375 K,Kappa extrapolated from 375 K,Anderson,http://dx.doi.org/10.1021/cm052055b,164751
+0.4,CaMn0.9Ru0.1O3,La1-xBix-NiO3,La1-xSrxCoO3,combination of melting and powder metallurgy techniques,,Biswas2011JMR,http://dx.doi.org/10.1038/nature09996,Extrapolated from 872 K,Extrapolated from 872 K,He,http://dx.doi.org/10.1107/S0108270187091509,164753
+0.85,CaMn0.82Ru0.18O3,Ca1-xSmxMnO3,Yb14MnSb11,"solid state reaction, sealed",,Pei2011N,http://dx.doi.org/10.1126/science.1159725,Seebeck extrapolated from 570 K,Seebeck extrapolated from 570 K,Noda,http://dx.doi.org/10.1021/j100792a049,164755
+0.05,CaGd0.98Mn0.02O3,Bi2Te3 (p-type),Zn4Sb3,"solid state reaction, vacuum",,Heremans2008S,Personal communication,"Seebeck from Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488","Seebeck from Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488",Dismukes,http://dx.doi.org/10.1016/j.jssc.2010.09.042,69824
+0.15,CaGd0.96Mn0.04O3,Bi2Te3 (n-type),Ce-Fe4CoSb12,"solid state reaction, air",,Snedaker,http://dx.doi.org/10.1063/1.348408,"Seebeck extrapolated from Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488","Seebeck extrapolated from Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488",Stadnyk,http://dx.doi.org/10.1063/1.4720075,69826
+0.25,CaGd0.94Mn0.06O3,Sb2Te3 (Sb-side),AgCrSe2,"arc melted, Ar",,Vining1991JAP,http://dx.doi.org/10.1063/1.4765358,"Seebeck estimated Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488","Seebeck estimated Zhou1996PRB, DOI: 10.1103/PhysRevB.54.12488",Hsu,http://dx.doi.org/10.1021/cm970397e,160306
+0.01,Nd1.4Bi0.6Ru2O7,Sb2Te3 (Te-side),Zn1-xAlxO,Floating zone melting,,Douglas2012APL,http://dx.doi.org/10.1063/1.1502190,Takahashi2012EMRS,Takahashi2012EMRS,Chung,http://dx.doi.org/10.1107/S0021889804018096,160308
+0.278,NdBiRu2O7,(AgSbTe2)1-x(GeTe)x (TAGS),SrMn1-xMoxO3,"melted, vacuum",,Funahashi2002APL,http://dx.doi.org/10.1021/cm970397e,Extrapolated from 370 K,Extrapolated from 370 K,Grebille,http://dx.doi.org/10.1107/S0567740869003876,97601
+0.39,Yb1.4Bi0.6Ru2O7,InxCo4Sb12,Sm1-xCaxMnO3,"solid state reaction, Ar",,Chung1997CM,http://dx.doi.org/10.1143/JJAP.39.L1127,Extrapolated from 830 K,Extrapolated from 830 K,Abrahams,http://www.ncbi.nlm.nih.gov/pubmed/18129536,94312
+0.27,YbBiRu2O7,Na0.02PbTe(1-x)Se(x),ZrNi1-xCoxSn,"arc-melted, vacuum",,Funahashi2000JJAPP2,http://dx.doi.org/10.1111/j.1551-2916.2005.00131.x,Extrapolated from 900 K,Extrapolated from 900 K,Magneli,http://dx.doi.org/10.1021/cm960226u,151609
+0.31,Bi2Ru2O7,TlxPb(1-x)Te,Zr1-xYxNiSn1-ySby,"sol-gel, air",,Kim2005JACS,http://dx.doi.org/10.1103/PhysRevB.59.192,"Resistivity calculated from reported Seebeck, thermal conductivity, and zT","Resistivity calculated from reported Seebeck, thermal conductivity, and zT",Luce,http://dx.doi.org/10.1016/j.ssc.2012.03.013,151610
+0.33,Y0.5Bi1.5Ru2O7,Si(1-x)Gex,NbCoSn,"flux (NaCl), air",,Kieslich,http://dx.doi.org/10.1016/j.ssc.2012.03.013,Resistivity extrapolated from 960 K,Resistivity extrapolated from 960 K,Rial,http://dx.doi.org/10.1016/0921-4534(95)00570-6,84933
+0.28,YBiRu2O7,Si1-xGex (p-type),Bi-Sb,"arc-melted, Ar",,Choi1999PRB,http://dx.doi.org/10.1103/PhysRevLett.69.2975,Thermal conductivity extrapolated from 970 K,Thermal conductivity extrapolated from 970 K,Radaelli,http://dx.doi.org/10.1103/PhysRevB.49.4163,164748
+0.002,Y2Ru2O7,Si1-xGex (n-type),Mo3Te4,"Czochralski method, He",,Wang2012SSC,http://dx.doi.org/10.1039/c2jm16297k,Thermal conductivity error is +/- 10%,Thermal conductivity error is +/- 10%,Klepp,http://dx.doi.org/10.1021/ic00255a002,74348
+0.006,Nd2Ru2O7,TiNiSn,SrTiO3,"melted, air",,Takagi1992PRL,http://dx.doi.org/10.1007/s11664-009-0815-2,*kappa extrapolated from 400 K,*kappa extrapolated from 400 K,Berg,http://dx.doi.org/10.1016/0022-4596(83)90096-8,2084
+0.015,Ca0.9Nd0.1MnO3,Bi2Sr2Co2Oy,ZrNiSn,"Czochralski method, argon",,Nunna2012EMRS,http://dx.doi.org/10.1007/s10854-011-0574-8,*res and seebeck 700K and 1000K values extrapolated from 600K,*res and seebeck 700K and 1000K values extrapolated from 600K,Prewitt,http://dx.doi.org/10.1016/S0167-2738(99)00235-0,171715
+0.0025,Ca0.9Tb0.1MnO3,K2Bi8Se13,Ca3Co4O9,"melted, zone refined",,Sparks2012JMC,http://dx.doi.org/10.1109/ICT.2006.331291,*kappa extrapolated from 375 K,*kappa extrapolated from 375 K,Bertaut,http://dx.doi.org/10.1021/ic50098a011,63099
+0.005,Ca0.9Ho0.1MnO3,Ca2Co2O5,TMMo6S8,"solid-liquid-vapor reaction, vacuum",,Guilmeau2009JEM,http://dx.doi.org/10.1016/j.ssc.2007.12.033,*extrapolated from 350 K,*extrapolated from 350 K,Ono,http://dx.doi.org/10.1016/0022-3697(61)90220-7,53910
+0.0075,Ca0.9Yb0.1MnO3,AlxZn(1-x)O,NaxCo2O4,"mechanochemical, Ar",,Dong2012JMSME,http://dx.doi.org/10.1016/j.jssc.2008.08.078,"*seebeck, resistivity extrapolated from700 K","*seebeck, resistivity extrapolated from700 K",Woodward,http://dx.doi.org/10.1143/JJAP.46.1071,174568
+0.03,Ca0.7Tb0.3MnO3,NixZn(1-x)O,CeCo4Sb12,"solid state reaction, He/H2",,Flahaut2006ICT,http://dx.doi.org/10.1021/cm060261t,*res data at 300K/400K extrapolated from 600K,*res data at 300K/400K extrapolated from 600K,Marezio,http://dx.doi.org/10.1016/0022-3697(95)00063-1,none
+0.5,Ca0.7Ho0.3MnO3,(Zn(1-x)Alx)1-xNixO,LaCo4Sb12,"melted, hotpressed",,Berardan2008SSC,http://dx.doi.org/10.1016/S0022-3697(96)00228-4,*values at 800 K,*values at 800 K,Chan,http://dx.doi.org/10.1107/S0365110X66001749,84268
+y0.02,Ca0.9Y0.1MnO3,WO3-x,DyTiO3,flux (TlTe2),,Iwasaki2008JSSC,http://dx.doi.org/10.1109/ICT.1996.553263,Unit Cell =Ce0.78 (Fe3.07 Co0.93) Sb11.69,Unit Cell =Ce0.78 (Fe3.07 Co0.93) Sb11.69,Mayer,http://dx.doi.org/10.1021/ic902072v,55458
+x0.004y0.06,Ca0.7Y0.3MnO3,La2CuO4+z,Ba8Ga16Ge30,arc melting,,Brown2006CM,http://dx.doi.org/10.1021/cm200581k,Unit Cell =Co1.26 Fe2.74 La0.743 Sb12,Unit Cell =Co1.26 Fe2.74 La0.743 Sb12,Berardan,http://dx.doi.org/10.1021/cm980358i,26170
+x0y0.02,BaPbO3,La2-xSrxCu0.94Ti0.06O4,CsBi4Te6,"melted, Ar",,Caillat1997JPCS,http://dx.doi.org/10.1016/j.progsolidstchem.2007.01.027,Unit cell=Sr0.8 Ti0.6 Nb0.4 O3,Unit cell=Sr0.8 Ti0.6 Nb0.4 O3,van der Lee,http://dx.doi.org/10.1016/0022-5088(78)90109-1,24736
+x0.06y0.04,Ba0.8Sr0.2PbO3,La2-xSrxCuO4,Tl9BiTe6,"Bridgman method, Ar-H gas",,Fleurial1996ICT,http://dx.doi.org/10.1103/PhysRevB.60.14057,Unit Cell = (Zn4 Sb3)1.04,Unit Cell = (Zn4 Sb3)1.04,Daoud-Aladine,http://dx.doi.org/10.1016/S0925-8388(02)00968-4,24731
+1.05,Ba0.6Sr0.4PbO3,TlCr5Se8,(Pb/Bi/Sn)S-(TiS2)2,"flux (SrCl2), air",,Gascoin2011CM,http://dx.doi.org/10.1016/j.jallcom.2004.02.061,*extrapolated from 600K,*extrapolated from 600K,Jeitschko,"http://dx.doi.org/10.1016/0022-4596(89)90285-5,",83486
+1.1,Ba0.4Sr0.6PbO3,LiMn2O4,Ba8AuxSi46-x,"solid state reaction , Ar",,Hebert2007,http://dx.doi.org/10.1016/j.jallcom.2006.02.075,*kappa estimated,*kappa estimated,Skolozdra,http://dx.doi.org/10.1103/PhysRevB.75.104417,184669
+8,LaNiO3,CuFe1-xCrxO2,K2S/Bi2S3,"solid state reaction , air",,Hejtmanek1999PRB,http://dx.doi.org/10.1063/1.2828713,*Values at 1000K extrapolated from 900K,*Values at 1000K extrapolated from 900K,Ehret,http://dx.doi.org/10.1021/cm980397u,184665
+10,La0.9Bi0.1NiO3,CuRh1-xMgxO2,Tl11.5Sb11.5Cu8Se27,"flux (Al), dynamic vacuum",,Katsumyama2004JAC,http://dx.doi.org/10.1016/j.jpcs.2004.01.010,*Seebeck extrapolated from 350K,*Seebeck extrapolated from 350K,Bochu,http://dx.doi.org/10.1007/BF03038432,184666
+12,Ca0.96Sm0.04MnO3,CuCr1-xMgxO2,TlTiPS5,"microwave solvothermal, air",,Katsumyama2007JAC,http://dx.doi.org/10.1063/1.1687532,*resistivity extrapolated from 900K,*resistivity extrapolated from 900K,Bars,http://dx.doi.org/10.1016/0304-8853(93)90861-U,184667
+14,Bi2Te3,(WO3)1-x(Co2O3)x,Tl2Cu2SnTe4,"Czochralski method, anneal PO<sub>2</sub> 10<sup>-14</sup>",,Kimura2008APL,http://dx.doi.org/10.1016/S0925-8388(02)01002-2,*extrapolated from 322 K,*extrapolated from 322 K,Page,http://dx.doi.org/10.1021/ja01317a031,184668
+17,Sb2Te3,CaYbxMn1-xO3,Mg2Si1-xBix,"templated grain growth, air, anneal PO<sub>2</sub> 10<sup>-14</sup>",,Kitagawa2004JPCS,http://dx.doi.org/10.1109/ICT.2006.331289,*extrapolated from 312 K,*extrapolated from 312 K,Howard,http://dx.doi.org/10.1016/0038-1098(80)90668-7,78632
+"n=1, x0.2",Ag0.15Sb0.15Te1.15Ge0.85,In2?xGexO3,Mg2Si1-x-y-zBixGeyAgz,"floating zone method, Ar",,Kobayashi2004JAP,http://dx.doi.org/10.1063/1.3117943,*extrapolated from 676 K,*extrapolated from 676 K,Nakatsugawa,http://dx.doi.org/10.1016/S0925-8388(02)01002-2,78240
+"n=2, x0.2",In0.05Co4Sb12,La1-xSrxCoO3,Ag9TlTe5,"ball milling, hot-pressed nanopowders",,Kurosaki2003JACa,http://dx.doi.org/10.1016/S0925-8388(02)00972-6,*value at 940 K,*value at 940 K,Harbrecht,http://dx.doi.org/10.1063/1.3117943,62608
+n infinity,In0.1Co4Sb12,Yb14MnSb11,Tl2SnTe5,,,Kuriyama2006ICT,http://dx.doi.org/10.1016/j.jallcom.2008.02.041,*value at 930 K,*value at 930 K,Levi,http://dx.doi.org/10.1103/PhysRevLett.101.205502,37123
+0.025,In0.15Co4Sb12,Zn4Sb3,Tl2GeTe5,,,Wang2009JAP,http://dx.doi.org/10.1016/S0038-1098(02)00555-0,*value at 926 K,*value at 926 K,Wada, http://dx.doi.org/10.1063/1.342963,89459
+0.7,In0.2Co4Sb12,Ce-Fe4CoSb12,Sr8Ga16Ge30,,,Muta2003JAC,http://dx.doi.org/10.1007/s11664-009-0975-0,*extrapolated from 342 K,*extrapolated from 342 K,Ritter,http://dx.doi.org/10.1143/JJAP.46.3004,31918
+4,In0.25Co4Sb12,AgCrSe2,Ba8GaxGe46-x,,,Muta2009JAC,http://dx.doi.org/10.1006/jssc.1995.1384,*kappa extrapolated from 250 K,*kappa extrapolated from 250 K,Fischer,http://dx.doi.org/10.1016/0925-8388(92)90288-K,29214
+3,In0.3Co4Sb12,Zn1-xAlxO,Ba8GaxSn46-x,,,Nan2002SSC,http://dx.doi.org/10.1109/ICT.2006.331288,*kappa extrapolated,*kappa extrapolated,Kennedy,http://dx.doi.org/10.1021/ic900805g,157802
+2.5,Na0.02PbTe,SrMn1-xMoxO3,Sr8GaxGe46-x,,,Ohta2010JEM,http://dx.doi.org/10.1143/JJAP.40.4644,"*value at 920 K, kappa extrapolated","*value at 920 K, kappa extrapolated",Jansen,http://dx.doi.org/10.1016/0022-5088(85)90147-X,80053
+0.09,Na0.02PbTe0.85Se0.15,Sm1-xCaxMnO3,Ba8GaxSi46-x,,,Ohtaki1995JSSC,http://dx.doi.org/10.1016/j.jeurceramsoc.2006.04.012,*value at 920 K,*value at 920 K,Braun,http://dx.doi.org/10.1007/BF01320505,14388
+0.075,Na0.02PbTe0.75Se0.25,ZrNi1-x-yCoxCuySn,Mg2-xCaxSi,,,Ono2006ICT,http://dx.doi.org/10.1063/1.1868063,*value at 662 K,*value at 662 K,Chakoumakos,http://dx.doi.org/10.1006/jssc.1993.1007,247225
+0.001,Tl0.01Pb0.99Te,Zr1-xYxNiSn1-ySby,Mg2Si,,,Fujita2001JJAPP1,http://www.jstor.org/stable/2889796,"*extrapolated from 323 K, kappa estimated","*extrapolated from 323 K, kappa estimated",Brant,http://dx.doi.org/10.1016/S1293-2558(03)00028-1,247230
+0.0015,Tl0.02Pb0.98Te,NbCoxSn,Cu2-xSe,,,Park2007JECS,http://dx.doi.org/10.1016/j.jallcom.2004.05.078,Unit Cell = (Sr0.905 Y0.07) (Ti0.995 O3),Unit Cell = (Sr0.905 Y0.07) (Ti0.995 O3),Paschen,http://dx.doi.org/10.1016/j.jssc.2008.12.032,247232
+0.003,Si0.9Ge0.1,Bi100-xSbx,Ca3-xMxCo4O9,,,Sakurada2005APL,http://orbit.dtu.dk/en/publications/improvement-of-niobium-doped-srtio3-by-nanostructuring(2b6f4b33-1a6f-4472-ac18-6996f91cd743).html,*kappa estimated from  300K,*kappa estimated from  300K,Doert,http://dx.doi.org/10.1109/ICT.2006.331288,85638
+0.007,Si0.8Ge0.2,Ca(Mn3-xCux)Mn4O12,Sr1-xMxTiO3,,,Sales1996S,http://dx.doi.org/10.1007/978-3-540-88201-5_24,"*extrapolated from 937 K, kappa estimated","*extrapolated from 937 K, kappa estimated",Wan,http://dx.doi.org/10.1002/zaac.19744080203,52403
+6,Si0.79936Ge0.19984B0.0008,PrxCa1-xMnO3,BaxSr1-x-yLayTiO3,,,Shutoh2005JAC,http://dx.doi.org/10.1039/c0jm02011g,*extrapolated from 330 K,*extrapolated from 330 K,Cordier,http://dx.doi.org/10.1016/0022-5088(80)90260-X,96163
+Sb1,Si0.7956Ge0.1989P0.0055,Mo6Te8-xSx,CuRh1-xMgxO2,,,Sonne2010,http://dx.doi.org/10.1039/A602506D,*seebeck extrapolated from 333 K,*seebeck extrapolated from 333 K,McCarthy,http://dx.doi.org/10.1107/S0108768198018345,68423
+Sb2,TiNiSn,SrO(SrTi1-xNbxO3),Ca3-xNaxAlSb3,,,Tinh2009,http://dx.doi.org/10.1016/j.jallcom.2010.06.195,"*seebeck, kappa  extrapolated from800K","*seebeck, kappa  extrapolated from800K",McGuire,http://dx.doi.org/10.1016/j.jssc.2010.06.002,157935
+Sb4,Bi2Sr2Co2O8,SrO(SrTi1-xNbxO3)2,(Fe0.998Co0.002Si2)1-x(Y2O3)x,,,Toberer2010JMC,http://dx.doi.org/10.1103/PhysRevB.77.075203,*extrapolated from 315 K,*extrapolated from 315 K,Saravanan,http://dx.doi.org/10.1103/PhysRevB.64.214404,85652
+Bi1,K2Bi8Se13,Sr1-xLaxTiO3,Ca5-xNaxAl2Sb6,,,Tsubota1997JMC,http://dx.doi.org/10.1126/science.287.5455.1024,Unit Cell = (Fe1.831 Ti0.169) O3,Unit Cell = (Fe1.831 Ti0.169) O3,Ihou-Mouko,http://dx.doi.org/10.1126/science.287.5455.1024,105382
+La1,Ca2Co2O5,Ti1-xNbxNiSn,Sr0.6Ba0.4Nb2O6,,,Wang2010JAC,http://dx.doi.org/10.1063/1.2163979,Unit Cell = Fe1.874 Sn0.096 O3,Unit Cell = Fe1.874 Sn0.096 O3,Paccard,http://dx.doi.org//10.1524/zkri.1994.209.1.95,102553
+La2,ZnO,Zr1-yNbyNiSn,SrnNbnO3n+2,,,Toberer2008PRB,http://dx.doi.org/10.1103/PhysRevLett.86.4350,"*Seebeck extrapolated from 700K, kappa extrapolated from 850 K","*Seebeck extrapolated from 700K, kappa extrapolated from 850 K",Agafonov,http://dx.doi.org/10.3390/ma3042606,617054
+,Al0.02Zn0.98O,Lax(Ca3Co4O9),Sr2-xLaxNb2O7,,,Chung2000S,http://dx.doi.org/10.3390/ma3042606,*kappa extrapolated from 325 K,*kappa extrapolated from 325 K,Toure,http://dx.doi.org/10.1016/0022-5088(91)90076-G,200971
+,Zn0.9604Al0.0196Ni0.02O,TMMo6S8,,,,Saramat2006,http://dx.doi.org/10.1063/1.3682585,*Seebeck extrapolated from 700K,*Seebeck extrapolated from 700K,Suekuni,http://dx.doi.org/10.1021/ja00109a012,85650
+,WO2.9,Ca1-xBixMnO3,,,,Wolfing2001PRL,http://dx.doi.org/10.1002/chin.199644003,*kappa extrapolated from  375 K,*kappa extrapolated from  375 K,Ma Qian,http://dx.doi.org/10.1021/cm050412c,644477
+,WO2.722,Ca1-xCexMnO3,,,,Wan2010M,http://dx.doi.org/10.1021/cm050412c,"*kappa from Choy 1992 polycrystalline samples used, values parallel to c axis","*kappa from Choy 1992 polycrystalline samples used, values parallel to c axis",Dusausoy,http://dx.doi.org/10.1016/j.jallcom.2008.12.117,126886
+,La2CuO4,Ca1-xSbxMnO3,,,,Candolfi2012JAP,http://dx.doi.org/10.1039/C1JM10827A,"*values at 550 K, extrapolated from 516 K, values parallel to c axis","*values at 550 K, extrapolated from 516 K, values parallel to c axis",Yan,http://dx.doi.org/10.1016/j.jallcom.2011.03.081,126889
+,La1.61Sr0.39Cu0.94Ti0.06O4,Ca1-xPbxMnO3,,,,Kanatizidis1996CM,http://dx.doi.org/10.1007/s11664-009-0735-1,,,Harrison,http://dx.doi.org/10.1016/0925-8388(92)90508-7,65091
+,La1.85Sr0.15Cu0.94Ti0.06O4,Ca1-xInxMnO3,,,,McGuire2005CM,http://dx.doi.org/10.1063/1.2009828,,,Berry,http://dx.doi.org/10.1107/S0108270190011362,65094
+,La1.73Sr0.27Cu0.94Ti0.06O4,Ca1-xSnxMnO3,,,,Bux2011JMC,http://dx.doi.org/10.1063/1.124182,,,Roudebush,http://dx.doi.org/10.1016/0022-4596(90)90323-P,646828
+,La1.69Sr0.31Cu0.94Ti0.06O4,NaxCo2O4,,,,Mars2009JEM,http://dx.doi.org/10.1063/1.121747,,,Kaluzhskikh,http://dx.doi.org/10.1016/S0925-8388(99)00531-9,160556
+,La1.67Sr0.34Cu0.94Ti0.06O4,Zn1-x-yAlxTiyO,,,,Kurosaki2005APL,http://dx.doi.org/10.1109/ICT.2002.1190269,,,Bucher,http://dx.doi.org/10.1103/PhysRevB.77.235119,40697
+,La1.95Sr0.05CuO4,(Zr0.5Hf0.5)1-xTixNiSn,,,,Sharp1999APL,http://dx.doi.org/10.1109/ICT.1999.843362,,,Carrio,http://dx.doi.org/10.1016/0022-4596(91)90289-T,249898
+,La1.9Sr0.1CuO4,CeFexCo4-xSb12,,,,Nolas1998APL,http://dx.doi.org/10.1016/j.jallcom.2007.09.101,,,Schuekel,http://dx.doi.org/10.1016/j.ssi.2010.03.027,632653
+,La1.85Sr0.15CuO4,LaFexCo4-xSb12,,,,Anno2002ICT,http://dx.doi.org/10.1016/j.jcrysgro.2006.10.270,,,Ishizawa,http://dx.doi.org/10.1039/C0EE00517G,602930
+,La1.725Sr0.28CuO4,Tix(Zr0.5Hf0.5)1-xNiSn,,,,Kuznetsov1999ICT,http://dx.doi.org/10.1038/nmat3273,,,,http://dx.doi.org/10.1107/S0567740871003765 ,602374
+,TlCr5Se8,Tix(Zr0.5Hf0.5)1-xNiSn1-xSbx,,,,Zhang2008JAC,http://dx.doi.org/10.1038/nmat3274,,,,http://dx.doi.org/10.1039/C1JM11463H,98592
+,LiMn2O4,SrTi1-xNbxO3,,,,Akasaka2007JCG,http://dx.doi.org/10.1038/nmat3275,,,,http://dx.doi.org/10.2138/?am.2010.3402,246406
+,CuFe0.9Cr0.1O2,SrDyxTi1-yNbyO3,,,,Liu2012NM,http://dx.doi.org/10.1038/nmat3276,,,,http://dx.doi.org/10.1006/jssc.1997.7363,164745
+,CuRh0.9Mg0.1O2,?-Zn4Sb3,,,,Shikano2003APL,http://dx.doi.org/10.1038/nmat3277,,,,http://dx.doi.org/10.1016/j.jssc.2011.02.027,157800
+,CuCr0.98Mg0.02O2,(Zn1-xAlx)O,,,,Xu2002APL,http://dx.doi.org/10.1038/nmat3278,,,,http://dx.doi.org/10.1016/j.jssc.2011.01.035,157801
+,WO3,Ba8Ga16Ge30,,,,Obara2004JJAPP2,http://dx.doi.org/10.1038/nmat3279,,,,http://dx.doi.org/10.1103/PhysRevB.11.500,157803
+,W0.99O2.97Co0.02O0.03,CsBi4Te6,,,,Muta2004JAC,http://dx.doi.org/10.1038/nmat3280,,,,http://dx.doi.org/10.1590/S1516-14392002000100010,157804
+,W0.95O2.95Co0.1O0.15,Tl9BiTe6,,,,Maignan2009PRB,http://link.aip.org/link/doi/10.1063/1.1562337,,,,http://dx.doi.org/10.1002/zaac.19855280909,157805
+,W0.9O2.7Co0.2O0.3,(Pb/Bi/Sn)S-(TiS2)2,,,,Zevalkink2011EES,http://dx.doi.org/10.1063/1.1480115,,,,http://dx.doi.org/10.1107/S0567740875006462,21001
+,CaYb0.05Mn0.95O3,Ba8AuxSi46-x,,,,Ito2006JAC,http://jjap.jsap.jp/link?JJAP/43/L540/,,,,,621065
+,CaYb0.1Mn0.9O3,K2S/Bi2S3,,,,Toberer2010AFM,http://dx.doi.org/10.1016/j.jallcom.2003.07.016,,,,,280118
+,CaYb0.15Mn0.85O3,Tl11.5Sb11.5Cu8Se27,,,,Muta2002JAC,http://dx.doi.org/10.1103/PhysRevB.80.115103,,,,,174464
+,CaYb0.4Mn0.6O3,TlTiPS5,,,,Roudebush2011JSSC,http://dx.doi.org/10.1039/c0ee00517g,,,,,94298
+,In2O3,Tl2Cu2SnTe4,,,,Kurosaki2003JAC,http://dx.doi.org/10.1016/j.jallcom.2005.04.060,,,,,170576
+,In1.998Ge0.002O3,Mg2Si1-xBix,,,,May2010PRB,http://dx.doi.org/10.1002/adfm.201000970,,,,,400246
+,In1.994Ge0.006O3,Mg2Si1-x-y-zBixGeyAgz,,,,Jood2011NL,http://dx.doi.org/10.1016/S0925-8388(01)01804-7,,,,,40567
+,In1.985Ge0.015O3,Ag9TlTe5,,,,Lee2010APL,http://dx.doi.org/10.1016/j.jssc.2011.02.027,,,,,79200
+,In1.94Ge0.06O3,TST,,,,Lee2011JMR,http://dx.doi.org/10.1002/chin.200318015,,,,,171227
+,In1.9Ge0.1O3,TGT,,,,Sakai2012JACS,http://dx.doi.org/10.1103/PhysRevB.81.125205,,,,,171214
+,In1.8Ge0.2O3,hotpressed TST,,,,Joshi2008NL,http://dx.doi.org/10.1021/nl202439h,,,,,171222
+,LaCoO3,single Xtal TST,,,,,http://dx.doi.org/10.1063/1.3291563,,,,,163708
+,La0.99Sr0.01CoO3,Sr8Ga16Ge30,,,,,http://dx.doi.org/10.1557/jmr.2010.78,,,,,180947
+,La0.98Sr0.02CoO3,Ba8GaxGe46-x,,,,,http://dx.doi.org/10.1111/j.1551-2916.2012.05169.x,,,,,71689
+,La0.95Sr0.05CoO3,Ba8Ga16Sn30,,,,,http://dx.doi.org/10.1021/nl8026795,,,,,73666
+,La0.8Sr0.2CoO3,Ba8Ga16Si30,,,,,,,,,,68855
+,Yb14MnSb11,Mg2-xCaxSi,,,,,,,,,,90177
+,Zn4Sb3,Mg2Si,,,,,,,,,,161949
+,CeFe2Co2Sb12,Cu2-xSe,,,,,,,,,,41140
+,CeFe3CoSb12,Ca3Co4O9,,,,,,,,,,181231
+,CeFe3.5Co0.5Sb12,Ca3-xMxCo4O9,,,,,,,,,,36363
+,CeFe3.5Co0.5Sb13,Sr1-xMxTiO3,,,,,,,,,,9119
+,CeFe3.5Co0.5Sb14,BaxSr1-x-yLayTiO3,,,,,,,,,,183853
+,CeFe4Sb12,Ca3-xNaxAlSb3,,,,,,,,,,168009
+,AgCrSe2,(Fe0.998Co0.002Si2)1-x(Y2O3)x,,,,,,,,,,84729
+,Zn0.9975Al0.0025O,Ca5-xNaxAl2Sb6,,,,,,,,,,380509
+,Zn0.995Al0.005O,(Fe1-xMx)2O3,,,,,,,,,,261375
+,Zn0.9925Al0.0075O,Ba8-ySryAl14Si32,,,,,,,,,,642048
+,Zn0.99Al0.01O,Nd2(Cu0.98M0.02)O4,,,,,,,,,,96013
+,Zn0.97Al0.03O,La3Te4-xMx,,,,,,,,,,48207
+,SrMn0.98Mo0.02O3,Sr0.6Ba0.4Nb2O6,,,,,,,,,,187
+,SrMn0.96Mo0.04O3,SrnNbnO3n+2,,,,,,,,,,
+,Sm1.7Ca0.3MnO3,Sr2-xLaxNb2O7,,,,,,,,,,
+,Sm0.5Ca0.5MnO3,,,,,,,,,,,
+,ZrNi1.98Cu0.02Sn,,,,,,,,,,,
+,ZrNi0.76Co0.004Cu0.2Sn,,,,,,,,,,,
+,ZrNiSn0.98Sb0.02,,,,,,,,,,,
+,Zr0.94Y0.06NiSn0.96Sb0.04,,,,,,,,,,,
+,NbCoSn,,,,,,,,,,,
+,NbCo1.05Sn,,,,,,,,,,,
+,NbCo1.10Sn,,,,,,,,,,,
+,Bi92Sb8,,,,,,,,,,,
+,Bi90Sb10,,,,,,,,,,,
+,Bi88Sb12,,,,,,,,,,,
+,Bi86Sb14,,,,,,,,,,,
+,Bi83Sb17,,,,,,,,,,,
+,CaMn7O12,,,,,,,,,,,
+,CaMn6.5Cu0.5O12,,,,,,,,,,,
+,CaMn6CuO12,,,,,,,,,,,
+,Pr0.5Ca0.5MnO3,,,,,,,,,,,
+,Mo3Te4,,,,,,,,,,,
+,Mo6Te7S,,,,,,,,,,,
+,Mo6Te6S2,,,,,,,,,,,
+,Sr2Ti0.8Nb0.2O4,,,,,,,,,,,
+,Sr3Ti1.6Nb0.4O7,,,,,,,,,,,
+,SrTi0.8Nb0.2O3,,,,,,,,,,,
+,Sr0.95La0.05TiO3,,,,,,,,,,,
+,Sr0.9La0.1TiO3,,,,,,,,,,,
+,Sr0.8La0.2TiO3,,,,,,,,,,,
+,Ti0.99Nb0.01NiSn,,,,,,,,,,,
+,Ti0.98Nb0.02NiSn,,,,,,,,,,,
+,Ti0.95Nb0.05NiSn,,,,,,,,,,,
+,ZrNiSn,,,,,,,,,,,
+,Zr0.99Nb0.01NiSn,,,,,,,,,,,
+,Zr0.98Nb0.02NiSn,,,,,,,,,,,
+,Zr0.95Nb0.05NiSn,,,,,,,,,,,
+,Ca3Co4O9,,,,,,,,,,,
+,La0.05Ca2.85Co3.8O8.55,,,,,,,,,,,
+,La0.3Ca2.7Co4O9,,,,,,,,,,,
+,La0.45Ca2.55Co4O9,,,,,,,,,,,
+,Cr1.3Mo6S8,,,,,,,,,,,
+,Mn1.3Mo6S8,,,,,,,,,,,
+,Fe1.3Mo6S8,,,,,,,,,,,
+,Ni2.0Mo6S8,,,,,,,,,,,
+,Cu4.0Mo6S8,,,,,,,,,,,
+,Ca0.9Bi0.1MnO3,,,,,,,,,,,
+,Ca0.9Ce0.1MnO3,,,,,,,,,,,
+,Ca0.9Sm0.1MnO3,,,,,,,,,,,
+,Ca0.9Sb0.1MnO3,,,,,,,,,,,
+,Ca0.9La0.1MnO3,,,,,,,,,,,
+,Ca0.9Pb0.1MnO3,,,,,,,,,,,
+,Ca0.9In0.1MnO3,,,,,,,,,,,
+,Ca0.9Sn0.1MnO3,,,,,,,,,,,
+,CuCrO2,,,,,,,,,,,
+,CuCr0.99Mg0.01O2,,,,,,,,,,,
+,CuCr0.97Mg0.03O2,,,,,,,,,,,
+,CuCr0.96Mg0.04O2,,,,,,,,,,,
+,CuCr0.95Mg0.05O2,,,,,,,,,,,
+,NaCo2O4,,,,,,,,,,,
+,Zn0.98Al0.02O,,,,,,,,,,,
+,Zn0.95Al0.05O,,,,,,,,,,,
+,Zn0.97Al0.025Ti0.005O,,,,,,,,,,,
+,Zn0.97Al0.02Ti0.01O,,,,,,,,,,,
+,Zn0.97Al0.015Ti0.015O,,,,,,,,,,,
+,Zn0.97Al0.01Ti0.02O,,,,,,,,,,,
+,Zr0.5Hf0.5NiSn,,,,,,,,,,,
+,Zr0.4Hf0.4Ti0.2NiSn,,,,,,,,,,,
+,Zr0.35Hf0.35Ti0.3NiSn,,,,,,,,,,,
+,Zr0.25Hf0.25Ti0.5NiSn,,,,,,,,,,,
+,Zr0.15Hf0.15Ti0.7NiSn,,,,,,,,,,,
+,CeFe2.5Co1.5Sb12,,,,,,,,,,,
+,CeFeCo3Sb12,,,,,,,,,,,
+,CeFe1.5Co2.5Sb12,,,,,,,,,,,
+,LaFe3CoSb12,,,,,,,,,,,
+,Zr0.5Hf0.5NiSn1.998Sb0.002,,,,,,,,,,,
+,Zr0.5Hf0.5NiSn1.994Sb0.006,,,,,,,,,,,
+,Zr0.3Hf0.3Ti0.4NiSn,,,,,,,,,,,
+,SrDy0.08Ti0.92O3,,,,,,,,,,,
+,SrNd0.17Ti0.83O3,,,,,,,,,,,
+,SrNd0.2Ti0.8O3,,,,,,,,,,,
+,SrNd0.24Ti0.76O3,,,,,,,,,,,
+,SrNb0.15Ti0.85O3,,,,,,,,,,,
+,Ba8Ga16Ge30,,,,,,,,,,,
+,CsBi4Te6,,,,,,,,,,,
+,Sb0.005I0.015Cs0.995Bi3.98Te5.97,,,,,,,,,,,
+,Tl9BiTe6,,,,,,,,,,,
+,Bi1.2S1.2Ti2S4,,,,,,,,,,,
+,Pb1.8S1.8Ti2S4,,,,,,,,,,,
+,Sn1.2S1.2Ti2S4,,,,,,,,,,,
+,Ba8Au5.14Si39.51,,,,,,,,,,,
+,Ba8Au5.59Si39.01,,,,,,,,,,,
+,Ba8Au6.10Si38.97,,,,,,,,,,,
+,KBi6.33S10,,,,,,,,,,,
+,Tl11.5Sb11.5Cu8Se27,,,,,,,,,,,
+,TlTiPS5,,,,,,,,,,,
+,Tl2Cu2SnTe4,,,,,,,,,,,
+,Mg2Si0.999Bi0.001,,,,,,,,,,,
+,Mg2Si0.9985Bi0.0015,,,,,,,,,,,
+,Mg2Si0.997Bi0.003,,,,,,,,,,,
+,Mg2Si0.995Bi0.005,,,,,,,,,,,
+,Mg2Si0.994Bi0.006,,,,,,,,,,,
+,Mg2Si0.993Bi0.007,,,,,,,,,,,
+,Mg2Si0.98Bi0.02,,,,,,,,,,,
+,Mg2Si0.6Ge0.4Bi0.02,,,,,,,,,,,
+,Mg2Si0.98Ag0.02,,,,,,,,,,,
+,Mg2Si0.6Ge0.4Ag0.02,,,,,,,,,,,
+,Ag9TlTe5,,,,,,,,,,,
+,Tl2SnTe5,,,,,,,,,,,
+,Tl2GeTe5,,,,,,,,,,,
+,Sr0.145Ga0.302Ge0.553,,,,,,,,,,,
+,Sr0.147Ga0.298Ge0.555,,,,,,,,,,,
+,Sr0.146Ga0.285Ge0.569,,,,,,,,,,,
+,Ba8Ga18Ge28,,,,,,,,,,,
+,Ba8Ga16Sn30,,,,,,,,,,,
+,Sr8Ga16Ge30,,,,,,,,,,,
+,Ba8Ga16Si30,,,,,,,,,,,
+,Mg2Si,,,,,,,,,,,
+,Mg1.95Ca0.05Si,,,,,,,,,,,
+,Mg1.9Ca0.1Si,,,,,,,,,,,
+,Cu2Se,,,,,,,,,,,
+,Cu1.98Se,,,,,,,,,,,
+,Ca2.7Na0.3Co4O9,,,,,,,,,,,
+,Ca2.7Bi0.3Co4O9,,,,,,,,,,,
+,Ca2.4Na0.3Bi0.3Co4O9,,,,,,,,,,,
+,Sr0.9Y0.1TiO3,,,,,,,,,,,
+,Ba0.3Sr0.6La0.1TiO3,,,,,,,,,,,
+,CuRhO2,,,,,,,,,,,
+,CuRh0.99Mg0.01O2,,,,,,,,,,,
+,CuRh0.96Mg0.04O2,,,,,,,,,,,
+,CuRh0.6Mg0.4O2,,,,,,,,,,,
+,Ca3AlSb3,,,,,,,,,,,
+,Ca2.97Na0.03AlSb3,,,,,,,,,,,
+,Ca2.94Na0.06AlSb3,,,,,,,,,,,
+,Ca2.85Na0.15AlSb3,,,,,,,,,,,
+,Fe0.998Co0.002Si2,,,,,,,,,,,
+,Fe0.978Co0.00196Si1.96Y0.04O0.06,,,,,,,,,,,
+,Fe0.978Co0.00196Si1.96Y0.12O0.18,,,,,,,,,,,
+,Ca5Al2Sb6,,,,,,,,,,,
+,Ca4.95Na0.05Al2Sb6,,,,,,,,,,,
+,Ca4.75Na0.25Al2Sb6,,,,,,,,,,,
+,Fe1.98Ti0.02O3,,,,,,,,,,,
+,Fe1.96Ti0.04O3,,,,,,,,,,,
+,Fe1.94Ti0.06O3,,,,,,,,,,,
+,Fe1.98Sn0.02O3,,,,,,,,,,,
+,Fe1.96Sn0.04O3,,,,,,,,,,,
+,Ba7SrAl16Si30,,,,,,,,,,,
+,Nd2CuO4,,,,,,,,,,,
+,Nd2Cu0.98Ni0.02O4,,,,,,,,,,,
+,Nd2Cu0.98Zn0.02O4,,,,,,,,,,,
+,La3Te3.8Sb0.2,,,,,,,,,,,
+,La3Te3.65Sb0.35,,,,,,,,,,,
+,La3Te3.35Sb0.65,,,,,,,,,,,
+,La3Te3.35Bi0.65,,,,,,,,,,,
+,La2.99Te4,,,,,,,,,,,
+,La2.74Te4,,,,,,,,,,,
+,Sr0.61Ba0.39Nb2O6,,,,,,,,,,,
+,Sr4.5Nb4.5O15.5,,,,,,,,,,,
+,Sr1.6La0.4Nb2O7,,,,,,,,,,,

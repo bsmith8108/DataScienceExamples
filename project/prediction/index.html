@@ -1,0 +1,460 @@
+<html>
+    <!DOCTYPE html>
+   <head>
+        <!-- See the TODOs below for your tasks on this part of the lab.  Before starting
+             on the TODOs, you should load this page as it may give you some idea of what
+             you're aiming for.  Also, you should be sure to try this out with some dummy
+             csv files before trying it on the full data.
+
+             I've written a lot of display code for you, but the page is not at all pretty.
+             You may choose to make it look nicer or not.  (If you do a really nice job, I
+             may steal your css for a future class... with credit of course.)
+        -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Lab 2 - Prediction of missing values</title>
+        <script type="text/javascript" src="../../d3/d3.v3.min.js"></script>
+        <script type="text/javascript" src="kdtree.js"></script>
+	<script>
+            /* Global Variables */
+            // The stub for the beginning of every header variable (to be appended with the number).
+            var HEADERS_VAR = "header";   
+            // The number of category headers.  To be filled once the data has loaded.
+            var numCategoryHeaders;
+            // An array of arrays to be filled once the category data has loaded.
+            var arrayCategoryData = [];
+            // The number of numerical headers.  To be filled once the data has loaded.
+            var numNumericalHeaders;
+            // An array of arrays to be filled once the numerical data has loaded.
+            var arrayNumericalData = [];
+	   
+	    // The values that it will take to normalize my points so I get an accurate kdTree
+	    var std_mean_data; 
+	    // The KD Tree that will be used for all of the different nearestNeighbor query
+	    var kdtree;
+            /* Called once the data has loaded and the user has put in the partial data point
+             * they're interested in.  Calls out to find the nearest neighbor.
+             */
+            function processDataAndPerformQuery(){ 
+                var pointArray = [];
+                for (var i = 0; i < numCategoryHeaders; i++) {
+                    var headersVar = HEADERS_VAR + i;
+		    var chosenOption = document.getElementById(headersVar).value;
+                    if (chosenOption !== "missing") {
+                        var chosenIndex = parseInt(chosenOption);
+                        var chosen = arrayCategoryData[i][chosenIndex];
+                        pointArray.push(chosen);
+                    } else {
+                        pointArray.push("");
+                    }
+                }
+                for (var i = 0; i < numNumericalHeaders; i++) {
+                    var headersVar = "num" + HEADERS_VAR + i;
+		    var value = document.getElementById(headersVar).value;
+                    if (value) {
+                        pointArray.push(value);
+                    } else {
+                        pointArray.push("");
+                    }
+                }
+
+		//var nn = findNearestNeighbor(pointArray); 
+		var nn = makeKDTree("cleaned.csv", pointArray)	
+		// var prediction = useNearestNeighborToMakePrediction(pointArray, nn);
+                //displayPrediction(prediction)
+		//displayPrediction(nn);
+            }	
+
+            function displayPrediction(prediction) {
+                // console.log(prediction);
+                d3.select("#headerrow").append("th").text("Prediction");
+                for (var i = 0; i < numCategoryHeaders; i++) {
+                    var trId = "row" + HEADERS_VAR + i;
+                    var row = d3.select("#" + trId);
+                    var cell = row.append("td").text(prediction[i]);
+                }
+                for (var i = 0; i < numNumericalHeaders; i++) {
+                    var trId = "row" + "num" + HEADERS_VAR + i;
+                    var row = d3.select("#" + trId);
+                    // I don't know why this isn't working, but when I changed it to the 
+		    //below it seems to work
+		    // var cell = row.append("td").text(prediction[numCategoryHeaders + i]);
+                    var cell = row.append("td").text(prediction[i]);
+                } 
+            }
+
+            function getHeadersConvertData(inputData, arrayData, includeEmpty) {
+                var headers = d3.keys(inputData[0]);
+               // console.log(headers);
+            
+	        // Convert the data to an array of arrays.
+                for (var i = 0; i < headers.length; i++) {
+                    arrayData.push([]);
+                }
+                for (var key in inputData) {
+                    var row = inputData[key];
+                    for (var i = 0; i < headers.length; i++) {
+                        var possibleCategory = row[headers[i]];
+                        if (possibleCategory || includeEmpty) {
+                            arrayData[i].push(row[headers[i]]);
+                        }
+                    }
+                }
+               // console.log(arrayData);
+                return headers;
+            }
+	    
+	    function ConvertData(inputData, arrayData, includeEmpty) {
+                var headers = d3.keys(inputData[0]);
+            
+	        // Convert the data to an array of arrays.
+                for (var i = 0; i < headers.length; i++) {
+                    arrayData.push([]);
+                }
+		// console.log(arrayData.length)
+
+                for (var key in inputData) {
+                    var row = inputData[key];
+                    for (var i = 0; i < headers.length; i++) {
+                        var possibleCategory = row[headers[i]];
+                        if (possibleCategory || includeEmpty) {
+                            arrayData[i].push(row[headers[i]]);
+                        }
+                    }
+                }
+                
+                return arrayData;
+            }
+            /* Get a csv of the possible categories and add them as selectors
+             * in the form.  This csv file is assumed to have a row of headers
+             * at the top (human-readable category names) with all possible 
+             * categorical values in the columns below (also human-readable).
+             */
+            function addCategoriesToForm(filename, table) {
+	        d3.csv(filename, function(error, data) {
+	            // Callback after data has maybe loaded.
+	            if (error) {  //If error is not null, something went wrong.
+	                console.log(error);  //Log the error.
+	            } else {   //If no error, the file loaded correctly. Yay!
+                        // Assumes at least one item.
+                        headers = getHeadersConvertData(data, arrayCategoryData, false);
+                        // Store the number of headers for use later.
+                        numCategoryHeaders = headers.length;
+                        // Add all the category selectors to the page.
+                        for (var i = 0; i < headers.length; i++) { 
+                            var headerVarName = HEADERS_VAR + i;
+                            var column = arrayCategoryData[i];
+                            var row = table.append("tr").attr("id", "row" + headerVarName);
+                            var cell = row.append("td");
+                            var label = cell.append("label")
+                                            .attr("for", headerVarName)
+                                            .text(headers[i] + ": ");
+                            var select = cell.append("select")
+                                             .attr("id", headerVarName);
+                            var unknownOption = select.append("option")
+                                                      .attr("value", "missing")
+                                                      .text("Unknown / Missing Value");
+                            for (var j = 0; j < column.length; j++) {
+                                var optionVarName = "option" + j;
+                                var option = select.append("option")
+                                                   .attr("value", j)
+                                                   .text(column[j]);
+                            }
+                        }
+                    }
+                });
+            }
+
+            /* Get a csv of the possible numerical fields and add them as inputs
+             * in the form.  This csv file is assumed to have a row of headers
+             * at the top (human-readable category names) followed by a row containing
+             * the units to display.
+             */
+            function addNumbersToForm(filename, table) {
+	        d3.csv(filename, function(error, data) {
+	            // Callback after data has maybe loaded.
+	            if (error) {  //If error is not null, something went wrong.
+	                console.log(error);  //Log the error.
+	            } else {   //If no error, the file loaded correctly. Yay!
+                        // Assumes at least one item.
+                        headers = getHeadersConvertData(data, arrayNumericalData, true);
+                        numNumericalHeaders = headers.length;
+                        // Add all the numerical fields to the page.
+                        for (var i = 0; i < headers.length; i++) { 
+                            var headerVarName = "num" + HEADERS_VAR + i;
+                            var column = arrayNumericalData[i];
+                            var row = table.append("tr").attr("id", "row" + headerVarName);
+                            var cell = row.append("td");
+                            var label = cell.append("label")
+                                            .attr("for", headerVarName)
+                                            .text(headers[i] + " (in " + column[0] + "): ");
+                            var input = cell.append("input")
+                                            .attr("id", headerVarName)
+                                            .attr("name", headerVarName)
+                                            .attr("type", "number");
+                        }
+                    }
+                });
+            }
+
+            /* This function is given an array of the query point the user is
+             * interested in finding the nearest neighbor for and should return
+             * the found nearest neighbor point.  Both points are expected to
+             * be in a single array where all categorical values are first in the
+             * array and all numerical values come after.  Categorical values are
+             * expressed as strings.
+             */
+	    // The first parameter returned is the cleaned point, the second is the list of axis
+	    // that are not defined in the point
+	    function cleanPoint(queryPoint) {
+		var fin = [];
+		var not_filled = [];
+		for (var i=0; i<queryPoint.length; i++) {
+		    if (queryPoint[i] == "") {
+			not_filled.push(i);
+		    }
+		    else {
+			var temp = parseFloat(queryPoint[i]);
+			fin.push([temp]);
+		    }
+		}
+		return [fin, not_filled];
+	    }
+            function findNearestNeighbor(queryPointArr, all_points, not_axis) {
+                // TODO: This is where you do your work!  I'd recommend creating
+                // a separate javascript file where you create a kd-tree and
+                // calling out to that from here.  Right now, this returns the same
+                // point it's given.  Obviously, you should change this to return
+                // the actual nearest neighbor in the same format.
+                
+		// replace points with the list of points from the csv
+		var n = kdtree.tree
+		var qp = new Point(queryPointArr)
+		var t = kdtree.tree.val;
+		var start_d =  qp.distance_between(t);
+		var nearN = findNearest(n,qp, [start_d, t]);
+		
+		var nearest = nearN[1];
+		// console.log(nearest)
+		
+		return useNearestNeighborToMakePrediction(qp, nearest, all_points, not_axis);
+            }
+	    
+	    function deNormalize(point) {
+		var fin = [];
+	        for (var i=0; i<point.length; i++) {
+		    // multipy by the standard deviation
+		    var temp = point[i] * std_mean_data[0][i];
+		    // add the mean
+		    temp = parseFloat(temp)+parseFloat(std_mean_data[1][i]);
+		    fin.push(Number((temp).toFixed(4)));
+		}
+		return fin;
+	    }	
+
+	    function normalize(my_data, not_axis) {
+		if ((typeof not_axis) == "undefined") not_axis=[];
+		// This will normalize the data, so that the kdtree is not skewed
+	        // although this will not account for outliers that throw off the
+		// mean and standard deviation
+	
+	        var fin = [];
+	        for (var k=0; k<my_data.length; k++) {
+			fin.push([]);
+	        }
+		var counter = 0;
+		
+		for (var i=0; i<not_axis.length+my_data.length; i++) {
+		    if (not_axis.indexOf(i) <=-1) {
+			for (var j=0; j<my_data[0].length; j++) {
+			    // subtract the mean
+			    
+			    var temp = my_data[counter][j] - std_mean_data[1][i];
+			    // divide by the standard deviation
+			    temp = temp/std_mean_data[0][i];
+			    fin[counter].push(temp);
+			}
+		    counter = counter + 1;
+		    }
+		}
+		return fin;
+	    }	
+
+	    function makeKDTree(csv, pointArray) {
+		d3.csv(csv, function(error, data) {
+		    if (error) {
+			console.log(error);
+		    } else {
+		    // I need to loop through all of my data and make each of the
+		    // rows of my csv into my point data structure, so that
+		    // I can then make my kd tree from those points
+		    
+		    // this returns the data for each column in its own array, 
+		    // So I need to convert it into an individual row    
+		    var my_data = ConvertData(data, arrayCategoryData, false); 	
+		    my_data = normalize(my_data);
+		    //console.log(my_data)
+		    var QP = cleanPoint(pointArray);
+		    var not_axis = QP[1];
+		    var qp = normalize(QP[0], QP[1]);
+		    // console.log(not_axis)	
+		    var all_points = get_all_Points(my_data);
+		    var set_of_rows = [];
+		    for (var i=0; i<my_data[0].length; i++) {
+			var row = []
+			for (var k=0; k<my_data.length; k++) {
+			    if (!(not_axis.indexOf(k) > -1)) {
+				row.push(my_data[k][i]);
+			    }
+			}
+			set_of_rows.push(row);
+		    }
+		    
+		    var set_of_points = [];    
+		    for (var j=0; j<set_of_rows.length; j++) {
+			var temp = new Point(set_of_rows[j]);
+			set_of_points.push(temp);
+		    }
+
+		    var tree = new kdTree(set_of_points);
+		    console.log("My kdtree is below")
+		    console.log(tree)
+		    kdtree = tree;
+		    var final_normalized =  findNearestNeighbor(qp, all_points, not_axis);    
+		    var final = deNormalize(final_normalized);
+		    displayPrediction(final);
+		    }
+		});
+	    }
+	    
+	    function get_all_Points(my_data) {
+		var set_of_rows = [];
+		for (var i=0; i<my_data[0].length; i++) {
+		    var row = []
+		    for (var k=0; k<my_data.length; k++) {
+			row.push(my_data[k][i]);
+		    }
+		    set_of_rows.push(row);
+		}
+		var set_of_points = [];    
+		for (var j=0; j<set_of_rows.length; j++) {
+		    var temp = new Point(set_of_rows[j]);
+		    set_of_points.push(temp);
+		}
+		return set_of_points;
+	    }
+
+
+            function useNearestNeighborToMakePrediction(queryPoint, nearestPoint, all_points, not_axis) {
+		// just replace the missing points in your query point with the values
+		//  from the nearest neighbor
+       	        var fin = [];
+		var total_point = locate_full_point(nearestPoint, all_points, not_axis);
+		var qp = queryPoint.get_points();
+		var nearArr = total_point.get_points();
+		var points_to_keep = [];
+	    	
+		for (var i=0; i<all_points[0].get_points().length; i++) {
+		    if (not_axis.indexOf(i) <= -1) {
+			points_to_keep.push(i);
+		    }
+		}
+	
+		var counter = 0;
+		for (var i=0; i<nearArr.length; i++) {
+		    if (points_to_keep.indexOf(i) > -1) {
+			fin.push(qp[counter]);
+			counter = counter + 1;
+		    }
+    		    else {
+			fin.push(nearArr[i]);
+		    }
+		}
+		return fin;
+            }
+
+	    function locate_full_point(nearestPoint, all_points, not_axis) {
+		var fin;
+		var points_to_check = [];
+		// find the indices of the points that are actually used for the kdtree
+		for (var i=0; i<all_points[0].get_points().length; i++) {
+		    if (not_axis.indexOf(i) <= -1) {
+			points_to_check.push(i);
+		    }
+		}
+		var fin_list = [];
+		for (var i=0; i<all_points.length; i++) {
+		    var isPoint = true;
+		    for (var j=0; j<points_to_check.length; j++) {
+			var index = points_to_check[j];
+			var point = all_points[i].get_points();
+		    	if (!(point[index] == nearestPoint.get_points()[j])){
+			    isPoint = false;
+			}
+		    }
+		    if (isPoint) {
+			fin_list.push(all_points[i]);
+		    }
+		}
+		
+		// I create a list of the possible points and then select one randomly
+		// because I cannot know anymore than what I am given and two different points
+		// could have the same values for the categories given and therefore, the only way
+		// to not skew the data when returning nearest neighbor, is to select one from the
+		// the list of possibilities randomly
+	
+		fin = fin_list[Math.floor(Math.random() * fin_list.length)];
+		return fin;
+	    }
+	    
+	    function load_std_mean_data() {
+		d3.csv("std_mean_data.csv", function(error, data) {
+		    std_mean_data = ConvertData(data, [], false);
+		});
+	    }
+        </script>
+    </head>
+    <body>
+        <h2 align="center">Lab 2 - Predicting missing values</h2>
+        <p>Enter your data query below by choosing the category values and entering the numerical values that you know.  We will then use the nearest neighbor in the full dataset to predict the 
+        unknown values.</p>
+	<p>The data was cleaned by replacing any missing value with the average of the values that were provided within the data set. When a data point is entered, it is first normalized, along with the 
+rest of the points available, so as that each field is weighed evenly when calculating the nearest
+neighbor. The kd tree is then created
+	using only the points that were given from the query point. This tree is then traversed to find the nearest neighbor to that point. Using the nearest neighbor, I then produce a complete point by replacing the
+	missing values with the ones from its neighbor. Once these points have been inputted, I then 
+denormalize the point, so that what is returned are the actual values for that point and not just the normalized ones </p>
+	<b>Please Refresh the page after each query</b> 
+
+
+
+        <script type="text/javascript">
+	    // Add the table and form to the page.
+            var form = d3.select("body").append("form").attr("id", "getdata");
+            var table = form.append("table").attr("cellpadding", "5px").attr("border", 0);
+            var headerrow = table.append("tr").attr("id", "headerrow");
+            headerrow.append("th").text("Query Point");
+
+            // Add a submit button to the form.
+            form.append("input")
+                .attr("class", "button")
+                .attr("name", "submit")
+                .attr("type", "button")
+                .attr("value", "Predict the missing values")
+                .attr("onclick", "processDataAndPerformQuery()");
+
+            // TODO: Create a csv of the categories and put it at categories.csv
+            // or change the name below.  The first row should be the header names
+            // for the categories.  The columns should have all possible category values.
+            // If some categories have more values than others, put the empty categories
+            // at the end of the column as empty strings.
+
+	    // findNearestNeighbor("cleaned.csv");	    
+            
+	    //makeKDTree("cleaned.csv", [2,3])
+	    load_std_mean_data();
+            addNumbersToForm("my_numbers.csv", table);
+	    //addCategoriesToForm("categories.csv", table);
+        </script>
+
+    </body>
+</html>
